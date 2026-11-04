@@ -1,0 +1,68 @@
+name: top_fc_stb
+description: Open-loop CMFB stability test vehicle for top_fc with series V9 injection
+PDK: gf180mcuD
+cace_format: 5.2
+paths:
+  root: ..
+  schematic: schematic
+  layout: layout
+  netlist: netlist
+  runs: runs
+  documentation: doc
+default_conditions:
+  vdd:
+    display: VDDA
+    unit: V
+    typical: 5.0
+  balance_level:
+    display: CMFB reference
+    unit: V
+    typical: 1.5
+  corner:
+    display: MOS corner
+    typical: typical
+  temperature:
+    display: Temperature
+    unit: °C
+    typical: 27
+parameters:
+  cmfb_stability:
+    description: CMFB first 0 dB loop-gain crossing and phase margin, matching existing
+      STB testbench convention
+    display: CMFB stability
+    spec:
+      f_ugf1:
+        display: First CMFB 0 dB crossing
+        unit: Hz
+        typical:
+          value: any
+      pm1:
+        display: CMFB first-crossing phase margin
+        unit: deg
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_stb_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - f_ugf1
+        - pm1
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5

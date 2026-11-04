@@ -1,0 +1,109 @@
+name: top_fc_power
+description: DC power and supply-current characterization of the three-rail top_fc_power
+  test vehicle
+PDK: gf180mcuD
+cace_format: 5.2
+paths:
+  root: ..
+  schematic: schematic
+  layout: layout
+  netlist: netlist
+  runs: runs
+  documentation: doc
+default_conditions:
+  vdd:
+    display: VDDA
+    unit: V
+    typical: 5.0
+  vcm:
+    display: Input common mode
+    unit: V
+    typical: 2.5
+  balance_level:
+    display: CMFB reference
+    unit: V
+    typical: 1.5
+  corner:
+    display: MOS corner
+    typical: typical
+  temperature:
+    display: Temperature
+    unit: °C
+    typical: 27
+parameters:
+  dc_power:
+    description: Branch current and DC power measurements from the three rail-inserted
+      ammeters
+    display: DC power consumption
+    spec:
+      i_ota_uA:
+        display: OTA current
+        unit: uA
+        typical:
+          value: any
+      i_cmfb_uA:
+        display: CMFB current
+        unit: uA
+        typical:
+          value: any
+      i_bias_uA:
+        display: Bias current
+        unit: uA
+        typical:
+          value: any
+      i_total_uA:
+        display: Sum of branch currents
+        unit: uA
+        typical:
+          value: any
+      p_ota:
+        display: OTA power
+        unit: mW
+        typical:
+          value: any
+      p_cmfb:
+        display: CMFB power
+        unit: mW
+        typical:
+          value: any
+      p_bias:
+        display: Bias power
+        unit: mW
+        typical:
+          value: any
+      p_total:
+        display: Total branch power
+        unit: mW
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_power_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - i_ota_uA
+        - i_cmfb_uA
+        - i_bias_uA
+        - i_total_uA
+        - p_ota
+        - p_cmfb
+        - p_bias
+        - p_total
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5

@@ -1,0 +1,781 @@
+name: top_fc
+description: Fully differential folded-cascode OTA with CMFB and bias circuit
+PDK: gf180mcuD
+cace_format: 5.2
+paths:
+  root: ..
+  schematic: schematic
+  layout: layout
+  netlist: netlist
+  runs: runs
+  documentation: doc
+default_conditions:
+  vdd:
+    display: VDD
+    unit: V
+    typical: 5.0
+  vcm:
+    display: Input common mode
+    unit: V
+    typical: 2.5
+  balance_level:
+    display: CMFB reference
+    unit: V
+    typical: 1.5
+  corner:
+    display: MOS corner
+    typical: typical
+  temperature:
+    display: Temperature
+    unit: °C
+    typical: 27
+parameters:
+  ac_gain:
+    description: Differential AC gain, unity-gain frequency and nominal phase margin
+    display: AC characterization
+    spec:
+      gain_dc:
+        display: Low-frequency differential gain
+        unit: dB
+        typical:
+          value: any
+      fu:
+        display: Unity-gain frequency
+        unit: Hz
+        typical:
+          value: any
+      pm:
+        display: Phase margin from differential AC response
+        unit: deg
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_ac_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - gain_dc
+        - fu
+        - pm
+    conditions:
+      corner: &id001
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature: &id002
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd: &id003
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  icmr:
+    description: Input common-mode voltage range with differential gain no more than
+      3 dB below its 2.5 V value
+    display: Input common-mode range
+    spec:
+      icmr_min:
+        display: ICMR lower bound
+        unit: V
+        typical:
+          value: any
+      icmr_max:
+        display: ICMR upper bound
+        unit: V
+        typical:
+          value: any
+      icmr_span:
+        display: ICMR span
+        unit: V
+        typical:
+          value: any
+      gain_nom:
+        display: Gain at VCM 2.5 V
+        unit: dB
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_icmr_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - vcm
+        - gain_db
+        script: extract_icmr.py
+        script_variables:
+        - icmr_min
+        - icmr_max
+        - icmr_span
+        - gain_nom
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  cmrr:
+    description: Differential-to-common-mode rejection ratio using separate AC excitations;
+      differential output for both modes
+    display: CMRR characterization
+    spec:
+      ad_1hz:
+        display: Differential gain at 1 Hz
+        unit: dB
+        typical:
+          value: any
+      acm_1hz:
+        display: Common-mode to differential gain at 1 Hz
+        unit: dB
+        typical:
+          value: any
+      cmrr_1hz:
+        display: CMRR at 1hz
+        unit: dB
+        typical:
+          value: any
+      cmrr_1k:
+        display: CMRR at 1k
+        unit: dB
+        typical:
+          value: any
+      cmrr_10k:
+        display: CMRR at 10k
+        unit: dB
+        typical:
+          value: any
+      cmrr_100k:
+        display: CMRR at 100k
+        unit: dB
+        typical:
+          value: any
+      cmrr_1meg:
+        display: CMRR at 1meg
+        unit: dB
+        typical:
+          value: any
+      cmrr_10meg:
+        display: CMRR at 10meg
+        unit: dB
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_cmrr_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - ad_1hz
+        - acm_1hz
+        - cmrr_1hz
+        - cmrr_1k
+        - cmrr_10k
+        - cmrr_100k
+        - cmrr_1meg
+        - cmrr_10meg
+    conditions:
+      corner: *id001
+      temperature: *id002
+      vdd: *id003
+  noise:
+    description: Differential noise integration from 1 Hz to 100 MHz; spectrum exported
+      for each PVT run
+    display: Integrated noise
+    spec:
+      onoise_total:
+        display: Integrated differential output noise (1 Hz to 100 MHz)
+        unit: V
+        typical:
+          value: any
+      inoise_total:
+        display: Integrated input-referred noise (1 Hz to 100 MHz)
+        unit: V
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_noise_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - onoise_total
+        - inoise_total
+    conditions: &id004
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  operating_point:
+    description: DC output levels; full operating point saved in a raw file per PVT
+      run
+    display: Operating point
+    spec:
+      voutp_dc:
+        display: DC positive output
+        unit: V
+        typical:
+          value: any
+      voutn_dc:
+        display: DC negative output
+        unit: V
+        typical:
+          value: any
+      vout_diff_dc:
+        display: DC differential output
+        unit: V
+        typical:
+          value: any
+      vout_cm_dc:
+        display: DC output common-mode
+        unit: V
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_op_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - voutp_dc
+        - voutn_dc
+        - vout_diff_dc
+        - vout_cm_dc
+    conditions: *id004
+  output_swing:
+    description: DC closed-loop differential output swing; original Vcmd sweep -4.5
+      to +4.5 V in 5 mV steps; valid contiguous range around zero with |error|<=10
+      mV and 4 output-device saturation margins >=0; raw extrema also retained
+    display: Output swing
+    spec:
+      vod_min_raw:
+        display: Raw minimum differential output
+        unit: V
+        typical:
+          value: any
+      vod_max_raw:
+        display: Raw maximum differential output
+        unit: V
+        typical:
+          value: any
+      voutp_pp_raw:
+        display: Raw positive-side peak-to-peak swing
+        unit: V
+        typical:
+          value: any
+      voutn_pp_raw:
+        display: Raw negative-side peak-to-peak swing
+        unit: V
+        typical:
+          value: any
+      swing_min:
+        display: Valid differential output minimum (tracking and saturation)
+        unit: V
+        typical:
+          value: any
+      swing_max:
+        display: Valid differential output maximum (tracking and saturation)
+        unit: V
+        typical:
+          value: any
+      swing_pp:
+        display: Valid differential peak-to-peak swing
+        unit: V
+        typical:
+          value: any
+      tracking_error_max:
+        display: Max absolute tracking error in valid region
+        unit: V
+        typical:
+          value: any
+      voutcm_min:
+        display: Minimum output common-mode in valid region
+        unit: V
+        typical:
+          value: any
+      voutcm_max:
+        display: Maximum output common-mode in valid region
+        unit: V
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_output_swing_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - vcmd
+        - voutp
+        - voutn
+        - vod
+        - vocm
+        - tracking_error
+        - sat_xm6
+        - sat_xm7
+        - sat_xm8
+        - sat_xm10
+        script: extract_output_swing.py
+        script_variables:
+        - vod_min_raw
+        - vod_max_raw
+        - voutp_pp_raw
+        - voutn_pp_raw
+        - swing_min
+        - swing_max
+        - swing_pp
+        - tracking_error_max
+        - voutcm_min
+        - voutcm_max
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  psrrp:
+    description: PSRR+ using VDDA AC injection; differential and common-mode output
+      rejection
+    display: PSRR+ characterization
+    spec:
+      psrrp_diff_1hz:
+        display: PSRR+ differential at 1hz
+        unit: dB
+        typical:
+          value: any
+      psrrp_diff_1k:
+        display: PSRR+ differential at 1k
+        unit: dB
+        typical:
+          value: any
+      psrrp_diff_10k:
+        display: PSRR+ differential at 10k
+        unit: dB
+        typical:
+          value: any
+      psrrp_diff_100k:
+        display: PSRR+ differential at 100k
+        unit: dB
+        typical:
+          value: any
+      psrrp_diff_1meg:
+        display: PSRR+ differential at 1meg
+        unit: dB
+        typical:
+          value: any
+      psrrp_diff_10meg:
+        display: PSRR+ differential at 10meg
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_1hz:
+        display: PSRR+ common-mode at 1hz
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_1k:
+        display: PSRR+ common-mode at 1k
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_10k:
+        display: PSRR+ common-mode at 10k
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_100k:
+        display: PSRR+ common-mode at 100k
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_1meg:
+        display: PSRR+ common-mode at 1meg
+        unit: dB
+        typical:
+          value: any
+      psrrp_cm_10meg:
+        display: PSRR+ common-mode at 10meg
+        unit: dB
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_psrrp_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - psrrp_diff_1hz
+        - psrrp_diff_1k
+        - psrrp_diff_10k
+        - psrrp_diff_100k
+        - psrrp_diff_1meg
+        - psrrp_diff_10meg
+        - psrrp_cm_1hz
+        - psrrp_cm_1k
+        - psrrp_cm_10k
+        - psrrp_cm_100k
+        - psrrp_cm_1meg
+        - psrrp_cm_10meg
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  psrrn:
+    description: PSRR- using VSSA AC injection; differential and common-mode output
+      rejection
+    display: PSRR- characterization
+    spec:
+      psrrn_diff_1hz:
+        display: PSRR- differential at 1hz
+        unit: dB
+        typical:
+          value: any
+      psrrn_diff_1k:
+        display: PSRR- differential at 1k
+        unit: dB
+        typical:
+          value: any
+      psrrn_diff_10k:
+        display: PSRR- differential at 10k
+        unit: dB
+        typical:
+          value: any
+      psrrn_diff_100k:
+        display: PSRR- differential at 100k
+        unit: dB
+        typical:
+          value: any
+      psrrn_diff_1meg:
+        display: PSRR- differential at 1meg
+        unit: dB
+        typical:
+          value: any
+      psrrn_diff_10meg:
+        display: PSRR- differential at 10meg
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_1hz:
+        display: PSRR- common-mode at 1hz
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_1k:
+        display: PSRR- common-mode at 1k
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_10k:
+        display: PSRR- common-mode at 10k
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_100k:
+        display: PSRR- common-mode at 100k
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_1meg:
+        display: PSRR- common-mode at 1meg
+        unit: dB
+        typical:
+          value: any
+      psrrn_cm_10meg:
+        display: PSRR- common-mode at 10meg
+        unit: dB
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_psrrn_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - psrrn_diff_1hz
+        - psrrn_diff_1k
+        - psrrn_diff_10k
+        - psrrn_diff_100k
+        - psrrn_diff_1meg
+        - psrrn_diff_10meg
+        - psrrn_cm_1hz
+        - psrrn_cm_1k
+        - psrrn_cm_10k
+        - psrrn_cm_100k
+        - psrrn_cm_1meg
+        - psrrn_cm_10meg
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  settling:
+    description: settling transient characterization
+    display: Settling time
+    spec:
+      settle_rise_s:
+        display: Rising settling time to 1% band
+        unit: s
+        typical:
+          value: any
+      settle_fall_s:
+        display: Falling settling time to 1% band
+        unit: s
+        typical:
+          value: any
+      settle_worst_s:
+        display: Worst transition settling time
+        unit: s
+        typical:
+          value: any
+      overshoot_rise_pct:
+        display: Rising overshoot
+        unit: '%'
+        typical:
+          value: any
+      overshoot_fall_pct:
+        display: Falling overshoot
+        unit: '%'
+        typical:
+          value: any
+      steady_error_rise_v:
+        display: Final rising tracking error
+        unit: V
+        typical:
+          value: any
+      steady_error_fall_v:
+        display: Final falling tracking error
+        unit: V
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_settling_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - vcmd
+        - vod
+        - vocm
+        - tracking_error
+        script: extract_settling.py
+        script_variables:
+        - settle_rise_s
+        - settle_fall_s
+        - settle_worst_s
+        - overshoot_rise_pct
+        - overshoot_fall_pct
+        - steady_error_rise_v
+        - steady_error_fall_v
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  slew_rate:
+    description: slew_rate transient characterization
+    display: Slew rate
+    spec:
+      sr_pos_vus:
+        display: Maximum positive differential slew rate
+        unit: V/us
+        typical:
+          value: any
+      sr_neg_vus:
+        display: Maximum negative differential slew rate
+        unit: V/us
+        typical:
+          value: any
+      sr_rise_10_90_vus:
+        display: Rising 10%-90% differential slew rate
+        unit: V/us
+        typical:
+          value: any
+      sr_fall_90_10_vus:
+        display: Falling 90%-10% differential slew rate
+        unit: V/us
+        typical:
+          value: any
+      tr_10_90_s:
+        display: Rising 10%-90% transition time
+        unit: s
+        typical:
+          value: any
+      tf_90_10_s:
+        display: Falling 90%-10% transition time
+        unit: s
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_slew_rate_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - vcmd
+        - vod
+        - dvod_dt
+        script: extract_slew_rate.py
+        script_variables:
+        - sr_pos_vus
+        - sr_neg_vus
+        - sr_rise_10_90_vus
+        - sr_fall_90_10_vus
+        - tr_10_90_s
+        - tf_90_10_s
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5
+  transient:
+    description: transient transient characterization
+    display: Transient response
+    spec:
+      vid_pp:
+        display: Differential input peak-to-peak
+        unit: V
+        typical:
+          value: any
+      vod_pp:
+        display: Differential output peak-to-peak
+        unit: V
+        typical:
+          value: any
+      vod_rms:
+        display: Differential output RMS
+        unit: V
+        typical:
+          value: any
+      vocm_min:
+        display: Minimum output common mode
+        unit: V
+        typical:
+          value: any
+      vocm_max:
+        display: Maximum output common mode
+        unit: V
+        typical:
+          value: any
+    tool:
+      ngspice:
+        template: top_fc_transient_cace.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - vid
+        - vod
+        - vocm
+        script: extract_transient.py
+        script_variables:
+        - vid_pp
+        - vod_pp
+        - vod_rms
+        - vocm_min
+        - vocm_max
+    conditions:
+      corner:
+        enumerate:
+        - typical
+        - ff
+        - ss
+      temperature:
+        enumerate:
+        - 0
+        - 27
+        - 50
+        - 100
+      vdd:
+        enumerate:
+        - 4.5
+        - 5.0
+        - 5.5

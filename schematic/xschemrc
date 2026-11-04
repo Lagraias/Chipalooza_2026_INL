@@ -1,0 +1,9 @@
+# Project Xschem search paths for CACE batch netlisting.
+# Does not modify any .sch or .sym files.
+if {[info exists env(PDK_ROOT)] && [info exists env(PDK)]} {
+    set pdkrc [file join $env(PDK_ROOT) $env(PDK) libs.tech xschem xschemrc]
+    if {[file exists $pdkrc]} {source $pdkrc}
+}
+set schematic_dir [file dirname [file normalize [info script]]]
+append XSCHEM_LIBRARY_PATH :$schematic_dir
+if {[info exists env(HOME)]} {append XSCHEM_LIBRARY_PATH :$env(HOME)}

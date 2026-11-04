@@ -1,0 +1,28 @@
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/juan/realhome/documents/gf180/2026_chipalooza/fully_diff_fc/testbenches/simulation/fc_cmfb_power_tb_batch.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+
+==========================================
+DC POWER CONSUMPTION
+==========================================
+i_ota_ua = 1.809446e+02
+i_cmfb_ua = 5.081401e+01
+i_total_ua = 2.317586e+02
+p_ota_mw = 9.047229e-01
+p_cmfb_mw = 2.540701e-01
+p_total_mw = 1.158793e+00
+ota_power_percent = 7.807459e+01
+cmfb_power_percent = 2.192541e+01
+i_vdda_ua = 2.317586e+02
+ASCII raw file "fc_cmfb_power_tb.raw"
+Note: Simulation executed from .control section 

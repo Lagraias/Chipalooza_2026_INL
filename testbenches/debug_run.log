@@ -1,0 +1,198 @@
++ set -u
++ set -o pipefail
++++ dirname ./run_all_simulations.sh
+++ cd .
+++ pwd
++ SCRIPT_DIR=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches
+++ cd /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/..
+++ pwd
++ PROJECT_DIR=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC
++ SCHEMATIC_DIR=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic
++ SIM_DIR=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation
++ SUMMARY_FILE=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/simulation_summary.txt
++ XSCHEM_STD_LIB=/usr/local/share/xschem/xschem_library
++ GF180_XSCHEM_LIB=/usr/local/share/OpenPDKs/gf180mcuD/libs.tech/xschem
++ MC_RUNS=250
++ OFFSET_STEP=10u
++ REQUESTED_TEST=
++ ALL_TESTBENCHES=("folded_cascode_op_tb" "cmfb_op_tb" "fc_cmfb_op_tb" "fc_cmfb_ac_tb" "fc_cmfb_tran_tb" "fc_cmfb_offset_tb")
++ [[ 5 -gt 0 ]]
++ case "$1" in
++ [[ -n '' ]]
++ REQUESTED_TEST=fc_cmfb_offset_tb
++ shift
++ [[ 4 -gt 0 ]]
++ case "$1" in
++ [[ 4 -ge 2 ]]
++ MC_RUNS=3
++ shift 2
++ [[ 2 -gt 0 ]]
++ case "$1" in
++ [[ 2 -ge 2 ]]
++ OFFSET_STEP=10u
++ shift 2
++ [[ 0 -gt 0 ]]
++ [[ 3 =~ ^[0-9]+$ ]]
++ [[ 3 -lt 2 ]]
++ [[ ! -d /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic ]]
++ for required_file in "${SCHEMATIC_DIR}/folded_cascode.sym" "${SCHEMATIC_DIR}/folded_cascode.sch" "${SCHEMATIC_DIR}/cmfb.sym" "${SCHEMATIC_DIR}/cmfb.sch"
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym ]]
++ for required_file in "${SCHEMATIC_DIR}/folded_cascode.sym" "${SCHEMATIC_DIR}/folded_cascode.sch" "${SCHEMATIC_DIR}/cmfb.sym" "${SCHEMATIC_DIR}/cmfb.sch"
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch ]]
++ for required_file in "${SCHEMATIC_DIR}/folded_cascode.sym" "${SCHEMATIC_DIR}/folded_cascode.sch" "${SCHEMATIC_DIR}/cmfb.sym" "${SCHEMATIC_DIR}/cmfb.sch"
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym ]]
++ for required_file in "${SCHEMATIC_DIR}/folded_cascode.sym" "${SCHEMATIC_DIR}/folded_cascode.sch" "${SCHEMATIC_DIR}/cmfb.sym" "${SCHEMATIC_DIR}/cmfb.sch"
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch ]]
++ [[ ! -d /usr/local/share/xschem/xschem_library ]]
++ [[ ! -d /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/xschem ]]
++ TESTBENCHES=("${ALL_TESTBENCHES[@]}")
++ [[ -n fc_cmfb_offset_tb ]]
++ valid=0
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ folded_cascode_op_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ cmfb_op_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ fc_cmfb_op_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ fc_cmfb_ac_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ fc_cmfb_tran_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ for tb in "${ALL_TESTBENCHES[@]}"
++ [[ fc_cmfb_offset_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ valid=1
++ break
++ [[ 1 -ne 1 ]]
++ TESTBENCHES=("${REQUESTED_TEST}")
++ OFFSET_REQUESTED=0
++ for tb in "${TESTBENCHES[@]}"
++ [[ fc_cmfb_offset_tb == \f\c\_\c\m\f\b\_\o\f\f\s\e\t\_\t\b ]]
++ OFFSET_REQUESTED=1
++ break
++ mkdir -p /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation
++ for cmd in xschem ngspice python3
++ command -v xschem
++ for cmd in xschem ngspice python3
++ command -v ngspice
++ for cmd in xschem ngspice python3
++ command -v python3
++ declare -A STATUS
++ echo ============================================================
+============================================================
++ echo ' GF180 Folded-Cascode Regression'
+ GF180 Folded-Cascode Regression
++ echo ============================================================
+============================================================
++ echo 'Project directory   : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC'
+Project directory   : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC
++ echo 'Testbench directory : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches'
+Testbench directory : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches
++ echo 'Schematic directory : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic'
+Schematic directory : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic
++ echo 'Simulation directory: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation'
+Simulation directory: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation
++ echo 'Xschem std library  : /usr/local/share/xschem/xschem_library'
+Xschem std library  : /usr/local/share/xschem/xschem_library
++ echo 'GF180 Xschem library: /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/xschem'
+GF180 Xschem library: /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/xschem
++ [[ 1 -eq 1 ]]
++ echo 'Offset MC runs      : 3'
+Offset MC runs      : 3
++ echo 'Offset sweep        : -20m to +20m, step 10u'
+Offset sweep        : -20m to +20m, step 10u
++ echo
+
++ for tb in "${TESTBENCHES[@]}"
++ echo ------------------------------------------------------------
+------------------------------------------------------------
++ echo 'Running fc_cmfb_offset_tb'
+Running fc_cmfb_offset_tb
++ echo ------------------------------------------------------------
+------------------------------------------------------------
++ netlist_xschem fc_cmfb_offset_tb
++ local tb=fc_cmfb_offset_tb
++ local sch=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/fc_cmfb_offset_tb.sch
++ local spice=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.spice
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/fc_cmfb_offset_tb.sch ]]
++ rm -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.spice
++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.spice ]]
++ grep -q 'IS MISSING' /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.spice
++ echo 'ERROR: unresolved Xschem symbols found in netlist:'
+ERROR: unresolved Xschem symbols found in netlist:
++ grep 'IS MISSING' /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.spice
+*  x1 -  folded_cascode  IS MISSING !!!!
+*  x2 -  cmfb  IS MISSING !!!!
++ return 1
++ echo 'FAIL: Xschem netlisting failed.'
+FAIL: Xschem netlisting failed.
++ STATUS["${tb}"]='FAIL (netlist)'
++ continue
++ echo ============================================================
++ echo 'GF180 Fully Differential Folded-Cascode'
++ echo 'Simulation Summary'
++ echo ============================================================
++ echo
++ printf '%-30s %s\n' Testbench Status
++ printf '%-30s %s\n' ------------------------------ -------------------------
++ for tb in "${TESTBENCHES[@]}"
++ printf '%-30s %s\n' fc_cmfb_offset_tb 'FAIL (netlist)'
++ echo
++ [[ 1 -eq 1 ]]
++ VOS_FILE=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc.txt
++ VOS_NUMERIC=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc_numeric.txt
++ tee /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/simulation_summary.txt
+++ count_numeric_samples /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc.txt
+++ local file=/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc.txt
+++ [[ ! -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc.txt ]]
+++ echo 0
+++ return
++ valid_runs=0
++ echo 'Offset Monte Carlo'
++ echo ------------------
++ echo 'Sweep            : -20 mV to +20 mV'
++ echo 'Sweep step       : 10u'
++ [[ 0 -gt 0 ]]
++ echo 'No valid Monte Carlo offset data were generated.'
++ echo Check:
++ echo '  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.log'
++ echo
++ echo 'Generated files'
++ echo ---------------
++ echo 'Netlists/logs : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation'
++ [[ 1 -eq 1 ]]
++ [[ -f /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc_histogram.png ]]
++ echo
++ echo ============================================================
+============================================================
+GF180 Fully Differential Folded-Cascode
+Simulation Summary
+============================================================
+
+Testbench                      Status
+------------------------------ -------------------------
+fc_cmfb_offset_tb              FAIL (netlist)
+
+Offset Monte Carlo
+------------------
+Sweep            : -20 mV to +20 mV
+Sweep step       : 10u
+No valid Monte Carlo offset data were generated.
+Check:
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_offset_tb.log
+
+Generated files
+---------------
+Netlists/logs : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation
+
+============================================================
++ echo
+
++ echo 'Summary saved to:'
+Summary saved to:
++ echo '  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/simulation_summary.txt'
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/simulation_summary.txt
++ FAILED=0
++ for tb in "${TESTBENCHES[@]}"
++ [[ FAIL (netlist) == FAIL* ]]
++ FAILED=1
++ exit 1

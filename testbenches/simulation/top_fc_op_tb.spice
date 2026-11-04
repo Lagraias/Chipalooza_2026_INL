@@ -1,0 +1,446 @@
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/top_fc_op_tb.sch
+**.subckt top_fc_op_tb
+x1 Balance_Level Vin voutp VDDA voutn Vin Iref VSSA top_fc
+V2 Vin VSSA 2.5
+C1 voutn VSSA 20p
+C2 voutp VSSA 20p
+V1 VDDA VSSA VDDA
+V3 VSSA 0 0
+V4 Balance_Level VSSA Balance_Level
+I0 Iref VSSA 1u
+**** begin user architecture code
+
+.include /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+
+
+.temp 27
+.param VDDA = 5
+.param Balance_Level = 1.5
+
+.control
+option sparse
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+save all
+save @m.x1.x1.xm1.m0[id]
+save @m.x1.x1.xm1.m0[gm]
+save @m.x1.x1.xm1.m0[vgs]
+save @m.x1.x1.xm1.m0[vds]
+save @m.x1.x1.xm1.m0[vth]
+save @m.x1.x1.xm1.m0[gds]
+save @m.x1.x1.xm1.m0[vdsat]
+
+save @m.x1.x1.xm2.m0[id]
+save @m.x1.x1.xm2.m0[gm]
+save @m.x1.x1.xm2.m0[vgs]
+save @m.x1.x1.xm2.m0[vds]
+save @m.x1.x1.xm2.m0[vth]
+save @m.x1.x1.xm2.m0[gds]
+save @m.x1.x1.xm2.m0[vdsat]
+
+save @m.x1.x1.xm9.m0[id]
+save @m.x1.x1.xm9.m0[gm]
+save @m.x1.x1.xm9.m0[vgs]
+save @m.x1.x1.xm9.m0[vds]
+save @m.x1.x1.xm9.m0[vth]
+save @m.x1.x1.xm9.m0[gds]
+save @m.x1.x1.xm9.m0[vdsat]
+
+save @m.x1.x1.xm8.m0[id]
+save @m.x1.x1.xm8.m0[gm]
+save @m.x1.x1.xm8.m0[vgs]
+save @m.x1.x1.xm8.m0[vds]
+save @m.x1.x1.xm8.m0[vth]
+save @m.x1.x1.xm8.m0[gds]
+save @m.x1.x1.xm8.m0[vdsat]
+
+save @m.x1.x1.xm6.m0[id]
+save @m.x1.x1.xm6.m0[gm]
+save @m.x1.x1.xm6.m0[vgs]
+save @m.x1.x1.xm6.m0[vds]
+save @m.x1.x1.xm6.m0[vth]
+save @m.x1.x1.xm6.m0[gds]
+save @m.x1.x1.xm6.m0[vdsat]
+
+save @m.x1.x1.xm5.m0[id]
+save @m.x1.x1.xm5.m0[gm]
+save @m.x1.x1.xm5.m0[vgs]
+save @m.x1.x1.xm5.m0[vds]
+save @m.x1.x1.xm5.m0[vth]
+save @m.x1.x1.xm5.m0[gds]
+save @m.x1.x1.xm5.m0[vdsat]
+
+save @m.x1.x2.xm1.m0[id]
+save @m.x1.x2.xm1.m0[gm]
+save @m.x1.x2.xm1.m0[vgs]
+save @m.x1.x2.xm1.m0[vds]
+save @m.x1.x2.xm1.m0[vth]
+save @m.x1.x2.xm1.m0[gds]
+
+save @m.x1.x2.xm2.m0[id]
+save @m.x1.x2.xm2.m0[gm]
+save @m.x1.x2.xm2.m0[vgs]
+save @m.x1.x2.xm2.m0[vds]
+save @m.x1.x2.xm2.m0[vth]
+save @m.x1.x2.xm2.m0[gds]
+
+save @m.x1.x2.xm3.m0[id]
+save @m.x1.x2.xm3.m0[gm]
+save @m.x1.x2.xm3.m0[vgs]
+save @m.x1.x2.xm3.m0[vds]
+save @m.x1.x2.xm3.m0[vth]
+save @m.x1.x2.xm3.m0[gds]
+
+save @m.x1.x2.xm4.m0[id]
+save @m.x1.x2.xm4.m0[gm]
+save @m.x1.x2.xm4.m0[vgs]
+save @m.x1.x2.xm4.m0[vds]
+save @m.x1.x2.xm4.m0[vth]
+save @m.x1.x2.xm4.m0[gds]
+
+save @m.x1.x2.xm5.m0[id]
+save @m.x1.x2.xm5.m0[gm]
+save @m.x1.x2.xm5.m0[vgs]
+save @m.x1.x2.xm5.m0[vds]
+save @m.x1.x2.xm5.m0[vth]
+save @m.x1.x2.xm5.m0[gds]
+
+save @m.x1.x2.xm6.m0[id]
+save @m.x1.x2.xm6.m0[gm]
+save @m.x1.x2.xm6.m0[vgs]
+save @m.x1.x2.xm6.m0[vds]
+save @m.x1.x2.xm6.m0[vth]
+save @m.x1.x2.xm6.m0[gds]
+
+save @m.x1.x2.xm7.m0[id]
+save @m.x1.x2.xm7.m0[gm]
+save @m.x1.x2.xm7.m0[vgs]
+save @m.x1.x2.xm7.m0[vds]
+save @m.x1.x2.xm7.m0[vth]
+save @m.x1.x2.xm7.m0[gds]
+
+save @m.x1.x2.xm8.m0[id]
+save @m.x1.x2.xm8.m0[gm]
+save @m.x1.x2.xm8.m0[vgs]
+save @m.x1.x2.xm8.m0[vds]
+save @m.x1.x2.xm8.m0[vth]
+save @m.x1.x2.xm8.m0[gds]
+
+save @m.x1.x2.xm9.m0[id]
+save @m.x1.x2.xm9.m0[gm]
+save @m.x1.x2.xm9.m0[vgs]
+save @m.x1.x2.xm9.m0[vds]
+save @m.x1.x2.xm9.m0[vth]
+save @m.x1.x2.xm9.m0[gds]
+
+save @m.x1.x3.xm1.m0[id]
+save @m.x1.x3.xm1.m0[gm]
+save @m.x1.x3.xm1.m0[vgs]
+save @m.x1.x3.xm1.m0[vds]
+save @m.x1.x3.xm1.m0[vth]
+save @m.x1.x3.xm1.m0[gds]
+
+save @m.x1.x3.xm2.m0[id]
+save @m.x1.x3.xm2.m0[gm]
+save @m.x1.x3.xm2.m0[vgs]
+save @m.x1.x3.xm2.m0[vds]
+save @m.x1.x3.xm2.m0[vth]
+save @m.x1.x3.xm2.m0[gds]
+
+save @m.x1.x3.xm3.m0[id]
+save @m.x1.x3.xm3.m0[gm]
+save @m.x1.x3.xm3.m0[vgs]
+save @m.x1.x3.xm3.m0[vds]
+save @m.x1.x3.xm3.m0[vth]
+save @m.x1.x3.xm3.m0[gds]
+
+save @m.x1.x3.xm4.m0[id]
+save @m.x1.x3.xm4.m0[gm]
+save @m.x1.x3.xm4.m0[vgs]
+save @m.x1.x3.xm4.m0[vds]
+save @m.x1.x3.xm4.m0[vth]
+save @m.x1.x3.xm4.m0[gds]
+
+save @m.x1.x3.xm5.m0[id]
+save @m.x1.x3.xm5.m0[gm]
+save @m.x1.x3.xm5.m0[vgs]
+save @m.x1.x3.xm5.m0[vds]
+save @m.x1.x3.xm5.m0[vth]
+save @m.x1.x3.xm5.m0[gds]
+
+save @m.x1.x3.xm6.m0[id]
+save @m.x1.x3.xm6.m0[gm]
+save @m.x1.x3.xm6.m0[vgs]
+save @m.x1.x3.xm6.m0[vds]
+save @m.x1.x3.xm6.m0[vth]
+save @m.x1.x3.xm6.m0[gds]
+
+save @m.x1.x3.xm7.m0[id]
+save @m.x1.x3.xm7.m0[gm]
+save @m.x1.x3.xm7.m0[vgs]
+save @m.x1.x3.xm7.m0[vds]
+save @m.x1.x3.xm7.m0[vth]
+save @m.x1.x3.xm7.m0[gds]
+
+save @m.x1.x3.xm8.m0[id]
+save @m.x1.x3.xm8.m0[gm]
+save @m.x1.x3.xm8.m0[vgs]
+save @m.x1.x3.xm8.m0[vds]
+save @m.x1.x3.xm8.m0[vth]
+save @m.x1.x3.xm8.m0[gds]
+
+save @m.x1.x3.xm9.m0[id]
+save @m.x1.x3.xm9.m0[gm]
+save @m.x1.x3.xm9.m0[vgs]
+save @m.x1.x3.xm9.m0[vds]
+save @m.x1.x3.xm9.m0[vth]
+save @m.x1.x3.xm9.m0[gds]
+
+save @m.x1.x3.xm10.m0[id]
+save @m.x1.x3.xm10.m0[gm]
+save @m.x1.x3.xm10.m0[vgs]
+save @m.x1.x3.xm10.m0[vds]
+save @m.x1.x3.xm10.m0[vth]
+save @m.x1.x3.xm10.m0[gds]
+
+save @m.x1.x3.xm11.m0[id]
+save @m.x1.x3.xm11.m0[gm]
+save @m.x1.x3.xm11.m0[vgs]
+save @m.x1.x3.xm11.m0[vds]
+save @m.x1.x3.xm11.m0[vth]
+save @m.x1.x3.xm11.m0[gds]
+
+save @m.x1.x3.xm12.m0[id]
+save @m.x1.x3.xm12.m0[gm]
+save @m.x1.x3.xm12.m0[vgs]
+save @m.x1.x3.xm12.m0[vds]
+save @m.x1.x3.xm12.m0[vth]
+save @m.x1.x3.xm12.m0[gds]
+
+save @m.x1.x3.xm13.m0[id]
+save @m.x1.x3.xm13.m0[gm]
+save @m.x1.x3.xm13.m0[vgs]
+save @m.x1.x3.xm13.m0[vds]
+save @m.x1.x3.xm13.m0[vth]
+save @m.x1.x3.xm13.m0[gds]
+
+save @m.x1.x3.xm14.m0[id]
+save @m.x1.x3.xm14.m0[gm]
+save @m.x1.x3.xm14.m0[vgs]
+save @m.x1.x3.xm14.m0[vds]
+save @m.x1.x3.xm14.m0[vth]
+save @m.x1.x3.xm14.m0[gds]
+
+save @m.x1.x3.xm15.m0[id]
+save @m.x1.x3.xm15.m0[gm]
+save @m.x1.x3.xm15.m0[vgs]
+save @m.x1.x3.xm15.m0[vds]
+save @m.x1.x3.xm15.m0[vth]
+save @m.x1.x3.xm15.m0[gds]
+
+save @m.x1.x3.xm16.m0[id]
+save @m.x1.x3.xm16.m0[gm]
+save @m.x1.x3.xm16.m0[vgs]
+save @m.x1.x3.xm16.m0[vds]
+save @m.x1.x3.xm16.m0[vth]
+save @m.x1.x3.xm16.m0[gds]
+
+save @m.x1.x3.xm17.m0[id]
+save @m.x1.x3.xm17.m0[gm]
+save @m.x1.x3.xm17.m0[vgs]
+save @m.x1.x3.xm17.m0[vds]
+save @m.x1.x3.xm17.m0[vth]
+save @m.x1.x3.xm17.m0[gds]
+
+save @m.x1.x3.xm18.m0[id]
+save @m.x1.x3.xm18.m0[gm]
+save @m.x1.x3.xm18.m0[vgs]
+save @m.x1.x3.xm18.m0[vds]
+save @m.x1.x3.xm18.m0[vth]
+save @m.x1.x3.xm18.m0[gds]
+
+save @m.x1.x3.xm21.m0[id]
+save @m.x1.x3.xm21.m0[gm]
+save @m.x1.x3.xm21.m0[vgs]
+save @m.x1.x3.xm21.m0[vds]
+save @m.x1.x3.xm21.m0[vth]
+save @m.x1.x3.xm21.m0[gds]
+
+save @m.x1.x3.xm22.m0[id]
+save @m.x1.x3.xm22.m0[gm]
+save @m.x1.x3.xm22.m0[vgs]
+save @m.x1.x3.xm22.m0[vds]
+save @m.x1.x3.xm22.m0[vth]
+save @m.x1.x3.xm22.m0[gds]
+
+op
+write top_fc_op_tb.raw all
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym # of pins=8
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sch
+.subckt top_fc Balance_Level Vinp voutp VDDA voutn Vinn Iref VSSA
+*.iopin Iref
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vinp
+*.ipin Vinn
+*.ipin Balance_Level
+*.iopin voutp
+*.iopin voutn
+x2 VDDA VSSA voutp voutn Balance_Level Vb1b Vb4 Vb6b cmfb
+* noconn Vb3b
+* noconn Vb5b
+* noconn Vb1b
+* noconn Vb6b
+x3 VDDA Vb3b Vb1b Vb5b VSSA Iref Vb6b bias_circuit
+* noconn Vb4
+x1 VDDA VSSA Vinp Vinn voutp voutn Vb1b Vb3b Vb4 Vb5b folded_cascode
+.ends
+
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym # of pins=8
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch
+.subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb4
+*.ipin Balance_Level
+*.ipin Vb1
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 net1 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 Vb4 Balance_Level net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 Vdrain_M4 Vfbk net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 Vdrain_M4 Vdrain_M4 VSSA VSSA nfet_05v0 L=2u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM5 Vb4 Vb4 VSSA VSSA nfet_05v0 L=2u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM6 VDDA Voutp net3 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 VDDA Voutn net2 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R3 net3 Vfbk 100k
+R4 net2 Vfbk 100k
+XM8 net3 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM9 net2 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R75 Voutn net5 25k
+R76 Voutp net4 25k
+C1 net4 net3 1p
+C2 net5 net2 1p
+.ends
+
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym # of pins=7
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sch
+.subckt bias_circuit VDDA Vb3 Vb1 Vb5 VSSA Iref Vb6
+*.iopin VDDA
+*.iopin VSSA
+*.iopin Vb1
+*.iopin Vb5
+*.iopin Iref
+*.iopin Vb3
+*.iopin Vb6
+XM1 Vb1 Vb1 VDDA VDDA pfet_05v0 L=2u W=5.77u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM2 net1 Vb1 VDDA VDDA pfet_05v0 L=2u W=5.77u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 net3 net3 VSSA VSSA nfet_05v0 L=2u W=11.2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 net6 Vb1 VDDA VDDA pfet_05v0 L=2u W=5.77u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM5 Vb5 Vb5 VSSA VSSA nfet_05v0 L=2.8u W=12.8u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM6 net4 net3 VSSA VSSA nfet_05v0 L=2u W=11.2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 Vb3 Vb3 VDDA VDDA pfet_05v0 L=2u W=0.7u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM8 Iref Iref Vb1 VDDA pfet_05v0 L=2u W=5.72u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM9 net2 Iref net1 VDDA pfet_05v0 L=2u W=5.72u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM10 net2 net2 net3 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM11 net7 Iref net6 VDDA pfet_05v0 L=2u W=5.72u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM12 net7 net7 Vb5 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM13 net5 net2 net4 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM14 net5 net5 Vb3 VDDA pfet_05v0 L=2u W=5.72u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM15 net8 Vb5 VSSA VSSA nfet_05v0 L=2u W=12.8u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM16 Vx Vx VDDA VDDA pfet_05v0 L=2u W=6.08u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM18 net9 net9 Vx VDDA pfet_05v0 L=2u W=4.36u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM19 Vy Vx VDDA VDDA pfet_05v0 L=2u W=4.9u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM20 net10 net9 Vy VDDA pfet_05v0 L=2u W=4.36u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM21 Vb6 Vb6 VSSA VSSA nfet_05v0 L=2u W=1.9u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM22 net10 net10 Vb6 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM17 net9 net7 net8 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+.ends
+
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=10
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+.subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Voutn Vb1 Vb3 Vb4 Vb5
+*.ipin Vinp
+*.ipin Vinn
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb1
+*.ipin Vb3
+*.ipin Vb4
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 d_XM1 Vb1 VDDA VDDA pfet_05v0 L=2u W=52u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 d_XM5 Vinp d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 d_XM4 Vinn d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 d_XM4 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM5 d_XM5 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM6 Voutn Vb4 d_XM5 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 Voutp Vb4 d_XM4 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM8 Voutn Vb3 d_XM9 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM9 d_XM9 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM10 Voutp Vb3 d_XM11 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM11 d_XM11 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+.ends
+
+.end

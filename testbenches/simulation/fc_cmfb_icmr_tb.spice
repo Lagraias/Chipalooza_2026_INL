@@ -1,0 +1,367 @@
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/fc_cmfb_icmr_tb.sch
+**.subckt fc_cmfb_icmr_tb
+x1 VDDA VSSA Vinp Vinn voutp Vb1 voutn Vb1 Vb3 Vb4 Vb5 folded_cascode
+x2 VDDA VSSA voutp voutn Balance_Level Vb1 Vb4 Vb6 cmfb
+C1 voutn VSSA 20p
+C2 voutp VSSA 20p
+V1 VDDA VSSA VDDA
+V3 VSSA 0 0
+V5 Vb1 VSSA Vb1
+V6 Vb3 VSSA Vb3
+V4 Balance_Level VSSA Balance_Level
+* noconn Vb4
+E1 Vout VSSA voutp voutn 1
+* noconn Vout
+Bvinp Vinp VSSA V = {V(Vcm_node) + V(Vdiff)/2}
+Bvinn Vinn VSSA V = {V(Vcm_node) - V(Vdiff)/2}
+Vcm Vcm_node VSSA 2.5
+Vdiff Vdiff VSSA dc 0 ac 1
+V8 Vb5 VSSA Vb5
+V7 Vb6 VSSA Vb6
+**** begin user architecture code
+
+.include /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+
+
+.temp 27
+.param VDDA = 5
+.param Balance_Level = 1.3
+.param Vb1 = 3.96
+.param Vb3 = 3.6
+.param Vb5 = 0.72
+.param Vb6 = 0.83
+.param VD = 0
+
+.param sw_stat_global=0
+.param sw_stat_mismatch=0
+
+.control
+option sparse
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+save all
+save @m.x1.xm1.m0[id]
+save @m.x1.xm1.m0[gm]
+save @m.x1.xm1.m0[vgs]
+save @m.x1.xm1.m0[vds]
+save @m.x1.xm1.m0[vth]
+save @m.x1.xm1.m0[gds]
+
+save @m.x1.xm2.m0[id]
+save @m.x1.xm2.m0[gm]
+save @m.x1.xm2.m0[vgs]
+save @m.x1.xm2.m0[vds]
+save @m.x1.xm2.m0[vth]
+save @m.x1.xm2.m0[gds]
+
+save @m.x1.xm9.m0[id]
+save @m.x1.xm9.m0[gm]
+save @m.x1.xm9.m0[vgs]
+save @m.x1.xm9.m0[vds]
+save @m.x1.xm9.m0[vth]
+save @m.x1.xm9.m0[gds]
+
+save @m.x1.xm8.m0[id]
+save @m.x1.xm8.m0[gm]
+save @m.x1.xm8.m0[vgs]
+save @m.x1.xm8.m0[vds]
+save @m.x1.xm8.m0[vth]
+save @m.x1.xm8.m0[gds]
+
+save @m.x1.xm6.m0[id]
+save @m.x1.xm6.m0[gm]
+save @m.x1.xm6.m0[vgs]
+save @m.x1.xm6.m0[vds]
+save @m.x1.xm6.m0[vth]
+save @m.x1.xm6.m0[gds]
+
+save @m.x1.xm5.m0[id]
+save @m.x1.xm5.m0[gm]
+save @m.x1.xm5.m0[vgs]
+save @m.x1.xm5.m0[vds]
+save @m.x1.xm5.m0[vth]
+save @m.x1.xm5.m0[gds]
+save @m.x1.xm5.m0[vdsat]
+save @m.x1.xm4.m0[vdsat]
+
+save @m.x2.xm1.m0[id]
+save @m.x2.xm1.m0[gm]
+save @m.x2.xm1.m0[vgs]
+save @m.x2.xm1.m0[vds]
+save @m.x2.xm1.m0[vth]
+save @m.x2.xm1.m0[gds]
+
+save @m.x2.xm2.m0[id]
+save @m.x2.xm2.m0[gm]
+save @m.x2.xm2.m0[vgs]
+save @m.x2.xm2.m0[vds]
+save @m.x2.xm2.m0[vth]
+save @m.x2.xm2.m0[gds]
+
+save @m.x2.xm3.m0[id]
+save @m.x2.xm3.m0[gm]
+save @m.x2.xm3.m0[vgs]
+save @m.x2.xm3.m0[vds]
+save @m.x2.xm3.m0[vth]
+save @m.x2.xm3.m0[gds]
+
+save @m.x2.xm4.m0[id]
+save @m.x2.xm4.m0[gm]
+save @m.x2.xm4.m0[vgs]
+save @m.x2.xm4.m0[vds]
+save @m.x2.xm4.m0[vth]
+save @m.x2.xm4.m0[gds]
+
+save @m.x2.xm5.m0[id]
+save @m.x2.xm5.m0[gm]
+save @m.x2.xm5.m0[vgs]
+save @m.x2.xm5.m0[vds]
+save @m.x2.xm5.m0[vth]
+save @m.x2.xm5.m0[gds]
+
+save @m.x2.xm6.m0[id]
+save @m.x2.xm6.m0[gm]
+save @m.x2.xm6.m0[vgs]
+save @m.x2.xm6.m0[vds]
+save @m.x2.xm6.m0[vth]
+save @m.x2.xm6.m0[gds]
+
+save @m.x2.xm7.m0[id]
+save @m.x2.xm7.m0[gm]
+save @m.x2.xm7.m0[vgs]
+save @m.x2.xm7.m0[vds]
+save @m.x2.xm7.m0[vth]
+save @m.x2.xm7.m0[gds]
+
+save @m.x2.xm8.m0[id]
+save @m.x2.xm8.m0[gm]
+save @m.x2.xm8.m0[vgs]
+save @m.x2.xm8.m0[vds]
+save @m.x2.xm8.m0[vth]
+save @m.x2.xm8.m0[gds]
+
+save @m.x2.xm9.m0[id]
+save @m.x2.xm9.m0[gm]
+save @m.x2.xm9.m0[vgs]
+save @m.x2.xm9.m0[vds]
+save @m.x2.xm9.m0[vth]
+save @m.x2.xm9.m0[gds]
+
+* ============================================================
+* ICMR ANALYSIS
+*
+* Input definition:
+*
+*   Vinp = VCM + Vdiff/2
+*   Vinn = VCM - Vdiff/2
+*
+* Vdiff has AC = 1 V.
+*
+* Therefore:
+*
+*   Vid(ac) = Vinp - Vinn = 1 V
+*
+* The common-mode voltage VCM is swept from 0 V to 5 V.
+* For every VCM value, the low-frequency differential gain
+* is evaluated at 1 Hz.
+* ============================================================
+
+
+* ------------------------------------------------------------
+* Nominal operating point at VCM = 2.5 V
+* ------------------------------------------------------------
+
+alter @Vcm[dc] = 2.5
+
+op
+
+write fc_cmfb_icmr_op_tb.raw
+
+
+* ------------------------------------------------------------
+* Persistent sweep variables
+*
+* Variables are stored in the CONST plot so they survive
+* the creation of each new AC plot.
+* ------------------------------------------------------------
+
+setplot const
+
+let vcm_val  = 0
+let vcm_stop = 5
+let vcm_step = 0.01
+
+
+* ------------------------------------------------------------
+* Remove previous result file
+* ------------------------------------------------------------
+
+shell rm -f icmr_gain.dat
+
+
+* ============================================================
+* COMMON-MODE SWEEP
+* ============================================================
+
+while vcm_val <= vcm_stop
+
+    * --------------------------------------------------------
+    * Set current common-mode voltage
+    * --------------------------------------------------------
+
+    alter @Vcm[dc] = $&vcm_val
+
+
+    * --------------------------------------------------------
+    * Low-frequency differential gain
+    *
+    * Only one AC point is required because no MEAS AT
+    * interpolation is used.
+    * --------------------------------------------------------
+
+    ac lin 1 1 1
+
+
+    * --------------------------------------------------------
+    * Differential output
+    * --------------------------------------------------------
+
+    let vod = v(voutp)-v(voutn)
+
+
+    * --------------------------------------------------------
+    * Differential gain
+    *
+    * Vdiff AC amplitude = 1 V
+    * --------------------------------------------------------
+
+    let ad = vod/v(Vdiff)
+
+
+    * --------------------------------------------------------
+    * Differential gain in dB
+    * --------------------------------------------------------
+
+    let gain_now = db(ad)
+
+
+    * --------------------------------------------------------
+    * Store:
+    *
+    * column 1 = VCM [V]
+    * column 2 = differential gain [dB]
+    * --------------------------------------------------------
+
+    echo $&const.vcm_val $&gain_now >> icmr_gain.dat
+
+
+    * --------------------------------------------------------
+    * Return to persistent variables
+    * --------------------------------------------------------
+
+    setplot const
+
+
+    * --------------------------------------------------------
+    * Increment common-mode voltage
+    * --------------------------------------------------------
+
+    let vcm_val = vcm_val + vcm_step
+
+end
+
+
+* ------------------------------------------------------------
+* Restore nominal common-mode voltage
+* ------------------------------------------------------------
+
+alter @Vcm[dc] = 2.5
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=11
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+.subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Vb1 Voutn Vb2 Vb3 Vb4 Vb5
+*.ipin Vinp
+*.ipin Vinn
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb1
+*.ipin Vb2
+*.ipin Vb3
+*.ipin Vb4
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 d_XM1 Vb1 VDDA VDDA pfet_05v0 L=2u W=52u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 d_XM5 Vinp d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 d_XM4 Vinn d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 d_XM4 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM5 d_XM5 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM6 Voutn Vb4 d_XM5 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 Voutp Vb4 d_XM4 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM8 Voutn Vb3 d_XM9 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM9 d_XM9 Vb2 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM10 Voutp Vb3 d_XM11 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM11 d_XM11 Vb2 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+.ends
+
+
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym # of pins=8
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch
+.subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb4
+*.ipin Balance_Level
+*.ipin Vb1
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 net1 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 Vb4 Balance_Level net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 Vdrain_M4 Vfbk net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 Vdrain_M4 Vdrain_M4 VSSA VSSA nfet_05v0 L=2u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM5 Vb4 Vb4 VSSA VSSA nfet_05v0 L=2u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM6 VDDA Voutp net3 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 VDDA Voutn net2 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R3 net3 Vfbk 100k
+R4 net2 Vfbk 100k
+XM8 net3 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM9 net2 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R75 Voutn net5 25k
+R76 Voutp net4 25k
+C1 net4 net3 1p
+C2 net5 net2 1p
+.ends
+
+.end

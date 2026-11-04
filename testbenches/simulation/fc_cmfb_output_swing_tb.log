@@ -1,0 +1,66 @@
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /home/juan/realhome/documents/gf180/2026_chipalooza/fully_diff_fc/testbenches/simulation/fc_cmfb_output_swing_tb_batch.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+ASCII raw file "fc_cmfb_output_swing_op_tb.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value : -3.81500e+00 Reference value : -2.04500e+00 Reference value : -8.00000e-02 Reference value :  1.88500e+00 Reference value :  3.70500e+00
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+
+No. of Data Rows : 1801
+voutp_min           =  2.27250e-01 at=  -4.50000e+00
+voutp_max           =  4.70963e+00 at=  4.50000e+00
+voutn_min           =  2.27250e-01 at=  4.50000e+00
+voutn_max           =  4.70963e+00 at=  -4.50000e+00
+vod_min             =  -4.48238e+00 at=  -4.50000e+00
+vod_max             =  4.48238e+00 at=  4.50000e+00
+vocm_min            =  1.63473e+00 at=  2.47000e+00
+vocm_max            =  2.58102e+00 at=  -7.37865e-14
+voutp_min = 2.272498e-01
+voutp_max = 4.709632e+00
+voutp_pp = 4.482382e+00
+voutn_min = 2.272498e-01
+voutn_max = 4.709632e+00
+voutn_pp = 4.482382e+00
+vod_min = -4.48238e+00
+vod_max = 4.482382e+00
+vod_pp = 8.964764e+00
+vocm_min = 1.634729e+00
+vocm_max = 2.581021e+00
+ASCII raw file "fc_cmfb_output_swing_tb.raw"
+Note: Simulation executed from .control section 

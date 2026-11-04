@@ -1,0 +1,62 @@
+
+==============================================================================
+GF180 FULLY DIFFERENTIAL FOLDED-CASCODE OTA
+NOMINAL CHARACTERIZATION SUMMARY
+==============================================================================
+
+[AC]
+DC Gain                            : 82.9673 dB
+Unity-Gain Frequency               : 4.7690 MHz
+Phase Margin                       : 87.4863 deg
+
+[Stability]
+CMFB Crossover 1                   : 67696.9000 Hz
+CMFB Phase Margin 1                : 93.4499 deg
+
+[Input]
+ICMR Minimum                       : 0.0000 V
+ICMR Maximum                       : 3.9000 V
+Gain at VCM = 2.5 V                : 82.9670 dB
+
+[Output]
+Differential Output Swing          : 1.4999 Vpp
+Differential Output Minimum        : -0.7499 V
+Differential Output Maximum        : 0.7499 V
+
+[Transient]
+Slew Rate +                        : 4.1008 V/us
+Slew Rate -                        : 4.1007 V/us
+Settling Time 1%                   : 434.3560 ns
+Settling Time 0.1%                 : 547.3560 ns
+
+[Noise]
+Input Noise @ 1 kHz                : 88.5365 nV/sqrtHz
+Broadband Input Noise              : 15.1270 nV/sqrtHz
+1/f Corner                         : 24500.0000 Hz
+Integrated Input Noise             : 148.2270 uVrms (1 Hz - 100 MHz)
+
+[Power]
+OTA Current                        : 180.9446 uA
+CMFB Current                       : 50.8140 uA
+Total Current                      : 231.7586 uA
+OTA Power                          : 0.9047 mW
+CMFB Power                         : 0.2541 mW
+Total Power                        : 1.1588 mW
+
+[Mismatch]
+Offset Mean                        : 0.1559 mV
+Offset Sigma                       : 4.1255 mV
+Offset 3 Sigma                     : 12.3765 mV
+Offset Minimum                     : -12.0759 mV
+Offset Maximum                     : 10.4518 mV
+
+==============================================================================
+N/A means that the corresponding value was not found in the generated simulation/post-processing logs.
+==============================================================================
+
+Characterization summary saved to:
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/characterization_summary.txt
+
+CSV summary saved to:
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/characterization_summary.csv
+

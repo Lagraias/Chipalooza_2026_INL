@@ -1,0 +1,8 @@
+Input   : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc_numeric.txt
+Output  : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/vos_mc_histogram.png
+N       = 250
+Mean    = 0.1559 mV
+Sigma   = 4.1255 mV
+3 sigma = 12.3765 mV
+Min     = -12.0759 mV
+Max     = 10.4518 mV

@@ -1,0 +1,410 @@
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_output_swing_tb_batch.sch
+**.subckt fc_cmfb_output_swing_tb_batch
+x1 VDDA VSSA Vinp Vinn voutp Vb1 voutn Vb1 Vb3 Vb4 Vb5 folded_cascode
+x2 VDDA VSSA voutp voutn Balance_Level Vb1 Vb4 Vb6 cmfb
+C1 voutn VSSA 20p
+C2 voutp VSSA 20p
+V1 VDDA VSSA VDDA
+V3 VSSA 0 0
+V5 Vb1 VSSA Vb1
+V6 Vb3 VSSA Vb3
+V4 Balance_Level VSSA Balance_Level
+* noconn Vb4
+E1 Vout VSSA voutp voutn 1
+* noconn Vout
+Bvinp Vinp VSSA V = {VCM + (V(Vcmd)-(V(voutp)-V(voutn)))/2}
+Bvinn Vinn VSSA V = {VCM - (V(Vcmd)-(V(voutp)-V(voutn)))/2}
+Vdiff Vdiff VSSA 0
+Vcmd Vcmd VSSA 0
+V8 Vb5 VSSA Vb5
+V7 Vb6 VSSA Vb6
+**** begin user architecture code
+
+.include /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /usr/local/share/OpenPDKs/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+
+
+.temp 27
+.param VDDA = 5
+.param Balance_Level = 1.3
+.param Vb1 = 3.96
+.param Vb3 = 3.6
+.param Vb5 = 0.72
+.param Vb6 = 0.83
+.param VD = 0
+.param VCM = 2.5
+
+.param sw_stat_global=0
+.param sw_stat_mismatch=0
+
+.control
+option sparse
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+save all
+save @m.x1.xm1.m0[id]
+save @m.x1.xm1.m0[gm]
+save @m.x1.xm1.m0[vgs]
+save @m.x1.xm1.m0[vds]
+save @m.x1.xm1.m0[vth]
+save @m.x1.xm1.m0[gds]
+
+save @m.x1.xm2.m0[id]
+save @m.x1.xm2.m0[gm]
+save @m.x1.xm2.m0[vgs]
+save @m.x1.xm2.m0[vds]
+save @m.x1.xm2.m0[vth]
+save @m.x1.xm2.m0[gds]
+
+save @m.x1.xm9.m0[id]
+save @m.x1.xm9.m0[gm]
+save @m.x1.xm9.m0[vgs]
+save @m.x1.xm9.m0[vds]
+save @m.x1.xm9.m0[vth]
+save @m.x1.xm9.m0[gds]
+
+save @m.x1.xm8.m0[id]
+save @m.x1.xm8.m0[gm]
+save @m.x1.xm8.m0[vgs]
+save @m.x1.xm8.m0[vds]
+save @m.x1.xm8.m0[vth]
+save @m.x1.xm8.m0[gds]
+
+save @m.x1.xm6.m0[id]
+save @m.x1.xm6.m0[gm]
+save @m.x1.xm6.m0[vgs]
+save @m.x1.xm6.m0[vds]
+save @m.x1.xm6.m0[vth]
+save @m.x1.xm6.m0[gds]
+
+save @m.x1.xm5.m0[id]
+save @m.x1.xm5.m0[gm]
+save @m.x1.xm5.m0[vgs]
+save @m.x1.xm5.m0[vds]
+save @m.x1.xm5.m0[vth]
+save @m.x1.xm5.m0[gds]
+save @m.x1.xm5.m0[vdsat]
+save @m.x1.xm4.m0[vdsat]
+
+save @m.x2.xm1.m0[id]
+save @m.x2.xm1.m0[gm]
+save @m.x2.xm1.m0[vgs]
+save @m.x2.xm1.m0[vds]
+save @m.x2.xm1.m0[vth]
+save @m.x2.xm1.m0[gds]
+
+save @m.x2.xm2.m0[id]
+save @m.x2.xm2.m0[gm]
+save @m.x2.xm2.m0[vgs]
+save @m.x2.xm2.m0[vds]
+save @m.x2.xm2.m0[vth]
+save @m.x2.xm2.m0[gds]
+
+save @m.x2.xm3.m0[id]
+save @m.x2.xm3.m0[gm]
+save @m.x2.xm3.m0[vgs]
+save @m.x2.xm3.m0[vds]
+save @m.x2.xm3.m0[vth]
+save @m.x2.xm3.m0[gds]
+
+save @m.x2.xm4.m0[id]
+save @m.x2.xm4.m0[gm]
+save @m.x2.xm4.m0[vgs]
+save @m.x2.xm4.m0[vds]
+save @m.x2.xm4.m0[vth]
+save @m.x2.xm4.m0[gds]
+
+save @m.x2.xm5.m0[id]
+save @m.x2.xm5.m0[gm]
+save @m.x2.xm5.m0[vgs]
+save @m.x2.xm5.m0[vds]
+save @m.x2.xm5.m0[vth]
+save @m.x2.xm5.m0[gds]
+
+save @m.x2.xm6.m0[id]
+save @m.x2.xm6.m0[gm]
+save @m.x2.xm6.m0[vgs]
+save @m.x2.xm6.m0[vds]
+save @m.x2.xm6.m0[vth]
+save @m.x2.xm6.m0[gds]
+
+save @m.x2.xm7.m0[id]
+save @m.x2.xm7.m0[gm]
+save @m.x2.xm7.m0[vgs]
+save @m.x2.xm7.m0[vds]
+save @m.x2.xm7.m0[vth]
+save @m.x2.xm7.m0[gds]
+
+save @m.x2.xm8.m0[id]
+save @m.x2.xm8.m0[gm]
+save @m.x2.xm8.m0[vgs]
+save @m.x2.xm8.m0[vds]
+save @m.x2.xm8.m0[vth]
+save @m.x2.xm8.m0[gds]
+
+save @m.x2.xm9.m0[id]
+save @m.x2.xm9.m0[gm]
+save @m.x2.xm9.m0[vgs]
+save @m.x2.xm9.m0[vds]
+save @m.x2.xm9.m0[vth]
+save @m.x2.xm9.m0[gds]
+
+* ============================================================
+* SAVE OUTPUT DEVICE OPERATING POINT PARAMETERS
+* ============================================================
+
+save @m.x1.xm6.m0[vds]
+save @m.x1.xm6.m0[vdsat]
+
+save @m.x1.xm7.m0[vds]
+save @m.x1.xm7.m0[vdsat]
+
+save @m.x1.xm8.m0[vds]
+save @m.x1.xm8.m0[vdsat]
+
+save @m.x1.xm10.m0[vds]
+save @m.x1.xm10.m0[vdsat]
+
+
+* ============================================================
+* OUTPUT VOLTAGE SWING ANALYSIS
+*
+* Closed-loop differential configuration:
+*
+* error = Vcmd - Vod
+*
+* Vinp = VCM + error/2
+* Vinn = VCM - error/2
+*
+* Therefore, inside the valid operating range:
+*
+* Vod ~= Vcmd
+* ============================================================
+
+
+* ------------------------------------------------------------
+* Nominal operating point
+* ------------------------------------------------------------
+
+alter @Vcmd[dc] = 0
+
+op
+
+write fc_cmfb_output_swing_op_tb.raw
+
+
+* ============================================================
+* DC SWEEP
+*
+* Command differential output from -4.5 V to +4.5 V
+* ============================================================
+
+dc Vcmd -4.5 4.5 5m
+
+
+* ============================================================
+* OUTPUT QUANTITIES
+* ============================================================
+
+let vod = v(voutp)-v(voutn)
+let vocm = (v(voutp)+v(voutn))/2
+
+let tracking_error = vod-v(Vcmd)
+
+
+* ============================================================
+* SATURATION MARGINS
+*
+* margin > 0 : saturation
+* margin = 0 : saturation boundary
+* margin < 0 : outside saturation
+* ============================================================
+
+let sat_xm6 = abs(@m.x1.xm6.m0[vds])-abs(@m.x1.xm6.m0[vdsat])
+let sat_xm7 = abs(@m.x1.xm7.m0[vds])-abs(@m.x1.xm7.m0[vdsat])
+
+let sat_xm8 = abs(@m.x1.xm8.m0[vds])-abs(@m.x1.xm8.m0[vdsat])
+let sat_xm10 = abs(@m.x1.xm10.m0[vds])-abs(@m.x1.xm10.m0[vdsat])
+
+
+* ============================================================
+* RAW EXTREMA
+* ============================================================
+
+meas dc voutp_min MIN v(voutp)
+meas dc voutp_max MAX v(voutp)
+
+meas dc voutn_min MIN v(voutn)
+meas dc voutn_max MAX v(voutn)
+
+meas dc vod_min MIN vod
+meas dc vod_max MAX vod
+
+meas dc vocm_min MIN vocm
+meas dc vocm_max MAX vocm
+
+
+let voutp_pp = voutp_max-voutp_min
+let voutn_pp = voutn_max-voutn_min
+let vod_pp = vod_max-vod_min
+
+
+* ============================================================
+* PRINT RESULTS
+* ============================================================
+
+print voutp_min
+print voutp_max
+print voutp_pp
+
+print voutn_min
+print voutn_max
+print voutn_pp
+
+print vod_min
+print vod_max
+print vod_pp
+
+print vocm_min
+print vocm_max
+
+
+* ============================================================
+* SAVE RAW FILE
+* ============================================================
+
+write fc_cmfb_output_swing_tb.raw
+
+
+* ============================================================
+* EXPORT DATA
+*
+* ngspice wrdata automatically writes the sweep variable
+* as the first column.
+*
+* Columns will therefore contain:
+*
+* Vcmd
+* Voutp
+* Voutn
+* Vod
+* Vocm
+* tracking_error
+* sat_xm6
+* sat_xm7
+* sat_xm8
+* sat_xm10
+* ============================================================
+
+wrdata output_swing.dat v(voutp) v(voutn) vod vocm tracking_error sat_xm6 sat_xm7 sat_xm8 sat_xm10
+
+
+* ============================================================
+* PLOTS
+* ============================================================
+
+* Actual differential output versus command
+plot vod v(Vcmd)
+
+* Tracking error
+plot tracking_error
+
+* Single-ended outputs
+plot v(voutp) v(voutn)
+
+* Output common-mode
+plot vocm
+
+* NMOS output-device saturation margins
+plot sat_xm6 sat_xm7
+
+* PMOS output-device saturation margins
+plot sat_xm8 sat_xm10
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=11
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+.subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Vb1 Voutn Vb2 Vb3 Vb4 Vb5
+*.ipin Vinp
+*.ipin Vinn
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb1
+*.ipin Vb2
+*.ipin Vb3
+*.ipin Vb4
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 d_XM1 Vb1 VDDA VDDA pfet_05v0 L=2u W=52u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 d_XM5 Vinp d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 d_XM4 Vinn d_XM1 VDDA pfet_05v0 L=0.5u W=87u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 d_XM4 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM5 d_XM5 Vb5 VSSA VSSA nfet_05v0 L=2u W=66.25u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=16
+XM6 Voutn Vb4 d_XM5 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 Voutp Vb4 d_XM4 VSSA nfet_05v0 L=2u W=58.4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM8 Voutn Vb3 d_XM9 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM9 d_XM9 Vb2 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM10 Voutp Vb3 d_XM11 VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM11 d_XM11 Vb2 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+.ends
+
+
+* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym # of pins=8
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch
+.subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
+*.iopin VDDA
+*.iopin VSSA
+*.ipin Vb4
+*.ipin Balance_Level
+*.ipin Vb1
+*.ipin Vb5
+*.iopin Voutp
+*.iopin Voutn
+XM1 net1 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=10
+XM2 Vb4 Balance_Level net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 Vdrain_M4 Vfbk net1 VDDA pfet_05v0 L=1u W=50u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM4 Vdrain_M4 Vdrain_M4 VSSA VSSA nfet_05v0 L=2u W=1.88u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM5 Vb4 Vb4 VSSA VSSA nfet_05v0 L=2u W=1.88u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM6 VDDA Voutp net3 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM7 VDDA Voutn net2 VSSA nfet_05v0 L=1u W=0.79u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R3 net3 Vfbk 100k
+R4 net2 Vfbk 100k
+XM8 net3 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM9 net2 Vb5 VSSA VSSA nfet_05v0 L=2u W=1.86u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+R75 Voutn net5 25k
+R76 Voutp net4 25k
+C1 net4 net3 1p
+C2 net5 net2 1p
+.ends
+
+.end

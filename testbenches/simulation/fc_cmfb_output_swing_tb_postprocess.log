@@ -1,0 +1,71 @@
+/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/extract_output_swing.py:961: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+==================================================
+Input data
+==================================================
+File             : /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/output_swing.dat
+Number of rows   : 1801
+Number of columns: 10
+
+
+==================================================
+Output Swing Analysis
+==================================================
+
+Validity criteria:
+
+  Saturation:
+    |VDS| - |VDSAT| >= 0
+
+  Tracking: |Vod - Vcmd| <= 10.0 mV
+
+  Output common-mode: |Vocm - 2.50| <= 100.0 mV
+
+--------------------------------------------------
+Valid differential command range
+--------------------------------------------------
+Vcmd minimum       : -0.7500 V
+Vcmd maximum       : 0.7500 V
+Command range      : 1.5000 Vpp
+
+--------------------------------------------------
+Single-ended output swing
+--------------------------------------------------
+Vout minimum       : 2.0275 V
+Vout maximum       : 2.7774 V
+Vout swing         : 0.7499 Vpp
+
+--------------------------------------------------
+Differential output swing
+--------------------------------------------------
+Vod minimum        : -0.7499 V
+Vod maximum        : 0.7499 V
+Vod swing          : 1.4999 Vpp
+
+--------------------------------------------------
+Output common-mode
+--------------------------------------------------
+Vocm minimum       : 2.4024 V
+Vocm maximum       : 2.5810 V
+
+--------------------------------------------------
+Tracking
+--------------------------------------------------
+Maximum error      : 0.055 mV
+
+--------------------------------------------------
+Boundary indicators
+--------------------------------------------------
+Lower-side limit   : Output common-mode
+Upper-side limit   : Output common-mode
+
+==================================================
+
+Plots saved to:
+
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/output_swing.png
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/output_swing_saturation_margin.png
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/output_swing_errors.png
+  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/output_swing_common_mode.png
+

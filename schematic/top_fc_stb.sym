@@ -1,0 +1,44 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 -40 -280 -40 -260 {}
+L 4 -110 -200 -90 -200 {}
+L 4 -110 -240 -90 -240 {}
+L 4 -110 -220 -90 -220 {}
+L 7 -40 -160 -40 -140 {}
+L 7 100 -230 120 -230 {}
+L 7 0 -280 0 -260 {}
+L 7 100 -190 120 -190 {}
+L 7 -110 -180 -90 -180 {}
+L 7 0 -160 0 -140 {}
+B 5 -42.5 -142.5 -37.5 -137.5 {name=Vb4_cmfb dir=inout}
+B 5 -42.5 -282.5 -37.5 -277.5 {name=Vb4_fc dir=in}
+B 5 -112.5 -202.5 -107.5 -197.5 {name=Balance_Level dir=in}
+B 5 -112.5 -242.5 -107.5 -237.5 {name=Vinp dir=in}
+B 5 117.5 -232.5 122.5 -227.5 {name=voutp dir=inout}
+B 5 -2.5 -282.5 2.5 -277.5 {name=VDDA dir=inout}
+B 5 117.5 -192.5 122.5 -187.5 {name=voutn dir=inout}
+B 5 -112.5 -222.5 -107.5 -217.5 {name=Vinn dir=in}
+B 5 -112.5 -182.5 -107.5 -177.5 {name=Iref dir=inout}
+B 5 -2.5 -142.5 2.5 -137.5 {name=VSSA dir=inout}
+P 4 5 100 -260 -90 -260 -90 -160 100 -160 100 -260 {}
+T {Vb4_cmfb} -75 -166 2 1 0.2 0.2 {}
+T {Vb4_fc} -25 -246 2 0 0.2 0.2 {}
+T {@symname} -35 -236 0 0 0.3 0.3 {}
+T {@name} -5 -202 0 0 0.2 0.2 {}
+T {Balance_Level} -85 -204 0 0 0.2 0.2 {}
+T {Vinp} -85 -244 0 0 0.2 0.2 {}
+T {voutp} 95 -234 0 1 0.2 0.2 {}
+T {VDDA} 15 -254 0 1 0.2 0.2 {}
+T {voutn} 95 -194 0 1 0.2 0.2 {}
+T {Vinn} -85 -224 0 0 0.2 0.2 {}
+T {Iref} -85 -176 2 1 0.2 0.2 {}
+T {VSSA} -15 -166 2 1 0.2 0.2 {}
