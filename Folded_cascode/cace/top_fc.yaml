@@ -687,11 +687,13 @@ parameters:
         format: ascii
         suffix: .data
         variables:
-        - time
-        - vcmd
-        - vod
-        - dvod_dt
-        script: extract_slew_rate.py
+        - raw_sr_pos_vus
+        - raw_sr_neg_vus
+        - raw_sr_rise_10_90_vus
+        - raw_sr_fall_90_10_vus
+        - raw_tr_10_90_s
+        - raw_tf_90_10_s
+        script: top_extract_slew_rate.py
         script_variables:
         - sr_pos_vus
         - sr_neg_vus

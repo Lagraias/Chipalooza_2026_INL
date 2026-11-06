@@ -1,3 +1,4 @@
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc.sch
 .subckt top_fc Balance_Level Vinp voutp VDDA voutn Vinn Iref VSSA
 *.PININFO Iref:B VDDA:B VSSA:B Vinp:I Vinn:I Balance_Level:I voutp:B voutn:B
 x2 VDDA VSSA voutp voutn Balance_Level Vb1b Vb4 Vb6b cmfb
@@ -11,6 +12,8 @@ x1 VDDA VSSA Vinp Vinn voutp voutn Vb1b Vb3b Vb4 Vb5b folded_cascode
 .ends
 
 * expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym # of pins=8
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sch
 .subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
 *.PININFO VDDA:B VSSA:B Vb4:I Balance_Level:I Vb1:I Vb5:I Voutp:B Voutn:B
 XM1 net1 Vb1 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
@@ -42,6 +45,8 @@ C2 net5 net2 1p
 
 * expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sym # of
 *+ pins=7
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sch
 .subckt bias_circuit VDDA Vb3 Vb1 Vb5 VSSA Iref Vb6
 *.PININFO VDDA:B VSSA:B Vb1:B Vb5:B Iref:B Vb3:B Vb6:B
 XM1 Vb1 Vb1 VDDA VDDA pfet_05v0 L=2u W=5.77u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
@@ -93,6 +98,8 @@ XM17 net9 net7 net8 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 
 
 * expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym #
 *+ of pins=10
+** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym
+** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sch
 .subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Voutn Vb1 Vb3 Vb4 Vb5
 *.PININFO Vinp:I Vinn:I VDDA:B VSSA:B Vb1:I Vb3:I Vb4:I Vb5:I Voutp:B Voutn:B
 XM1 d_XM1 Vb1 VDDA VDDA pfet_05v0 L=2u W=52u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'

@@ -26,28 +26,28 @@
 | DC negative output   | ngspice              | voutn_dc             |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
 | DC differential output | ngspice              | vout_diff_dc         |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
 | DC output common-mode | ngspice              | vout_cm_dc           |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Raw minimum differential output | ngspice              | vod_min_raw          |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Raw maximum differential output | ngspice              | vod_max_raw          |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Raw positive-side peak-to-peak swing | ngspice              | voutp_pp_raw         |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Raw negative-side peak-to-peak swing | ngspice              | voutn_pp_raw         |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Valid differential output minimum (tracking and saturation) | ngspice              | swing_min            |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Valid differential output maximum (tracking and saturation) | ngspice              | swing_max            |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Valid differential peak-to-peak swing | ngspice              | swing_pp             |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Max absolute tracking error in valid region | ngspice              | tracking_error_max   |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Minimum output common-mode in valid region | ngspice              | voutcm_min           |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| Maximum output common-mode in valid region | ngspice              | voutcm_max           |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
-| PSRR+ differential at 1hz | ngspice              | psrrp_diff_1hz       |               ​ |          ​ |          any | 135.353 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ differential at 1k | ngspice              | psrrp_diff_1k        |               ​ |          ​ |          any | 137.332 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ differential at 10k | ngspice              | psrrp_diff_10k       |               ​ |          ​ |          any | 153.165 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ differential at 100k | ngspice              | psrrp_diff_100k      |               ​ |          ​ |          any | 169.938 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ differential at 1meg | ngspice              | psrrp_diff_1meg      |               ​ |          ​ |          any | 175.626 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ differential at 10meg | ngspice              | psrrp_diff_10meg     |               ​ |          ​ |          any | 186.680 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 1hz | ngspice              | psrrp_cm_1hz         |               ​ |          ​ |          any |  52.019 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 1k | ngspice              | psrrp_cm_1k          |               ​ |          ​ |          any |  52.010 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 10k | ngspice              | psrrp_cm_10k         |               ​ |          ​ |          any |  51.219 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 100k | ngspice              | psrrp_cm_100k        |               ​ |          ​ |          any |  41.604 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 1meg | ngspice              | psrrp_cm_1meg        |               ​ |          ​ |          any |  39.728 dB |            ​ |          ​ |   Pass ✅    |
-| PSRR+ common-mode at 10meg | ngspice              | psrrp_cm_10meg       |               ​ |          ​ |          any |  32.431 dB |            ​ |          ​ |   Pass ✅    |
+| Raw minimum differential output | ngspice              | vod_min_raw          |               ​ |          ​ |          any |   -4.435 V |            ​ |          ​ |   Pass ✅    |
+| Raw maximum differential output | ngspice              | vod_max_raw          |               ​ |          ​ |          any |    4.435 V |            ​ |          ​ |   Pass ✅    |
+| Raw positive-side peak-to-peak swing | ngspice              | voutp_pp_raw         |               ​ |          ​ |          any |    4.435 V |            ​ |          ​ |   Pass ✅    |
+| Raw negative-side peak-to-peak swing | ngspice              | voutn_pp_raw         |               ​ |          ​ |          any |    4.435 V |            ​ |          ​ |   Pass ✅    |
+| Valid differential output minimum (tracking and saturation) | ngspice              | swing_min            |               ​ |          ​ |          any |   -2.390 V |            ​ |          ​ |   Pass ✅    |
+| Valid differential output maximum (tracking and saturation) | ngspice              | swing_max            |               ​ |          ​ |          any |    2.390 V |            ​ |          ​ |   Pass ✅    |
+| Valid differential peak-to-peak swing | ngspice              | swing_pp             |               ​ |          ​ |          any |    4.781 V |            ​ |          ​ |   Pass ✅    |
+| Max absolute tracking error in valid region | ngspice              | tracking_error_max   |               ​ |          ​ |          any |    0.002 V |            ​ |          ​ |   Pass ✅    |
+| Minimum output common-mode in valid region | ngspice              | voutcm_min           |               ​ |          ​ |          any |    1.475 V |            ​ |          ​ |   Pass ✅    |
+| Maximum output common-mode in valid region | ngspice              | voutcm_max           |               ​ |          ​ |          any |    2.470 V |            ​ |          ​ |   Pass ✅    |
+| PSRR+ differential at 1hz | ngspice              | psrrp_diff_1hz       |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ differential at 1k | ngspice              | psrrp_diff_1k        |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ differential at 10k | ngspice              | psrrp_diff_10k       |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ differential at 100k | ngspice              | psrrp_diff_100k      |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ differential at 1meg | ngspice              | psrrp_diff_1meg      |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ differential at 10meg | ngspice              | psrrp_diff_10meg     |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 1hz | ngspice              | psrrp_cm_1hz         |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 1k | ngspice              | psrrp_cm_1k          |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 10k | ngspice              | psrrp_cm_10k         |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 100k | ngspice              | psrrp_cm_100k        |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 1meg | ngspice              | psrrp_cm_1meg        |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
+| PSRR+ common-mode at 10meg | ngspice              | psrrp_cm_10meg       |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
 | PSRR- differential at 1hz | ngspice              | psrrn_diff_1hz       |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
 | PSRR- differential at 1k | ngspice              | psrrn_diff_1k        |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
 | PSRR- differential at 10k | ngspice              | psrrn_diff_10k       |               ​ |          ​ |          any |          ​ |            ​ |          ​ |   Skip 🟧    |
