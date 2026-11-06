@@ -32,7 +32,7 @@ N 130 -160 130 -120 {lab=Balance_Level}
 N 130 -60 130 -10 {lab=VSSA}
 N 310 -160 310 -120 {lab=Iref}
 N 310 -60 310 -10 {lab=VSSA}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym} 660 -370 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc.sym} 660 -370 0 0 {name=x1}
 C {devices/code_shown.sym} 430 -650 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -41,7 +41,7 @@ value="
 "}
 C {launcher.sym} 670 -710 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/top_fc_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/top_fc_op_tb.raw"}
 C {vsource.sym} 350 -300 0 0 {name=V2 value=2.5 savecurrent=false}
 C {lab_wire.sym} 350 -220 0 0 {name=p15 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} 380 -400 0 0 {name=p14 sig_type=std_logic lab=Vin}

@@ -58,7 +58,7 @@ C {lab_wire.sym} 480 -180 0 0 {name=p30 sig_type=std_logic lab=Balance_Level}
 C {lab_wire.sym} 480 -40 0 0 {name=p31 sig_type=std_logic lab=VSSA}
 C {launcher.sym} 280 -830 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/fc_cmfb_op_tb.raw"}
 C {code_shown.sym} -810 -690 0 0 {name=NGSPICE only_toplevel=false value=
 "
 .temp 27
@@ -102,7 +102,7 @@ C {lab_wire.sym} -350 -520 0 0 {name=p33 sig_type=std_logic lab=Vinp}
 C {lab_wire.sym} -120 -520 0 0 {name=p34 sig_type=std_logic lab=Vinn}
 C {lab_wire.sym} -120 -370 0 0 {name=p37 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} -350 -370 0 1 {name=p38 sig_type=std_logic lab=VSSA}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym} 390 -450 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc.sym} 390 -450 0 0 {name=x1}
 C {lab_wire.sym} 350 -550 0 0 {name=p5 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 500 -430 0 1 {name=p3 sig_type=std_logic lab=voutn}
 C {lab_wire.sym} 500 -470 0 1 {name=p4 sig_type=std_logic lab=voutp}

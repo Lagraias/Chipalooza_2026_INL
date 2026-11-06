@@ -24,8 +24,8 @@ N 350 -240 380 -240 {lab=Vb2}
 N 350 -220 380 -220 {lab=Vb3}
 N 350 -200 380 -200 {lab=Vb4}
 N 350 -180 380 -180 {lab=Vb5}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym} 450 -200 0 0 {name=x1}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym} 580 -250 0 0 {name=x2}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym} 450 -200 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym} 580 -250 0 0 {name=x2}
 C {lab_wire.sym} 430 -440 0 0 {name=p1 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 790 -440 0 0 {name=p2 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 790 -230 0 0 {name=p3 sig_type=std_logic lab=VSSA}

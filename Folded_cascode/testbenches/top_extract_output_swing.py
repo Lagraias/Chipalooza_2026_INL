@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
+import os
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,7 +12,7 @@ import matplotlib.pyplot as plt
 # ============================================================
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SIM_DIR = SCRIPT_DIR / "simulation" / "top_regression"
+SIM_DIR = Path(os.environ.get("TOP_SIM_DIR", SCRIPT_DIR / "simulation"))
 
 INPUT_FILE = SIM_DIR / "output_swing.dat"
 

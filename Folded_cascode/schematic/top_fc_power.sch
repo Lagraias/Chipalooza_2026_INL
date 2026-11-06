@@ -32,7 +32,7 @@ N 1130 -400 1170 -400 {lab=Vb4}
 N 980 -540 980 -500 {lab=VDDA_CMFB}
 N 980 -500 980 -470 {lab=VDDA_CMFB}
 N 1080 -400 1130 -400 {lab=Vb4}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym} 770 -320 0 0 {name=x2}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym} 770 -320 0 0 {name=x2}
 C {lab_wire.sym} 980 -280 0 0 {name=p1 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} 850 -420 0 0 {name=p3 sig_type=std_logic lab=voutn}
 C {lab_wire.sym} 850 -440 0 0 {name=p4 sig_type=std_logic lab=voutp}
@@ -68,10 +68,10 @@ C {lab_wire.sym} 260 -400 0 1 {name=p40 sig_type=std_logic lab=Vb3b}
 C {lab_wire.sym} 260 -370 0 1 {name=p41 sig_type=std_logic lab=Vb5b}
 C {noconn.sym} 270 -340 2 0 {name=l6}
 C {lab_wire.sym} 260 -340 0 1 {name=p42 sig_type=std_logic lab=Vb6b}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym} -70 -240 0 0 {name=x3}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sym} -70 -240 0 0 {name=x3}
 C {noconn.sym} 1170 -400 2 0 {name=l7}
 C {lab_wire.sym} 420 -280 0 0 {name=p33 sig_type=std_logic lab=Vb1b}
 C {lab_wire.sym} 980 -530 0 0 {name=p46 sig_type=std_logic lab=VDDA_CMFB}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym} 520 -240 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym} 520 -240 0 0 {name=x1}
 C {iopin.sym} -120 -670 0 1 {name=p6 lab=VDDA_OTA}
 C {iopin.sym} -120 -700 0 1 {name=p15 lab=VDDA_BIAS}

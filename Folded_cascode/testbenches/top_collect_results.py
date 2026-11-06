@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-import re
+import os
+import csv
+import math
 import numpy as np
+import re
 
 
 # ============================================================
@@ -10,7 +13,8 @@ import numpy as np
 # ============================================================
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SIM_DIR = SCRIPT_DIR / "simulation" / "top_regression"
+SIM_DIR = Path(os.environ.get("TOP_SIM_DIR", SCRIPT_DIR / "simulation")).expanduser().resolve()
+SIM_DIR.mkdir(parents=True, exist_ok=True)
 
 OUTPUT_TXT = SIM_DIR / "characterization_summary.txt"
 OUTPUT_CSV = SIM_DIR / "characterization_summary.csv"
@@ -45,7 +49,9 @@ def search_value(text, patterns):
 
         if match:
             try:
-                return float(match.group(1))
+                value = float(match.group(1))
+                if math.isfinite(value):
+                    return value
             except (ValueError, IndexError):
                 pass
 
@@ -167,9 +173,11 @@ phase_fu = search_value(
 )
 
 
-phase_margin = None
-
-if phase_fu is not None:
+phase_margin = search_value(ac_log, [
+    r"\bphase_margin\s*=\s*([-+0-9.eE]+)",
+    r"\bpm\s*=\s*([-+0-9.eE]+)",
+])
+if phase_margin is None and phase_fu is not None:
     phase_margin = 180.0 + phase_fu
 
 
@@ -235,6 +243,27 @@ add_result(
     pm1,
     "deg"
 )
+
+
+# ============================================================
+# CMRR AND PSRR (only values explicitly present in ngspice logs)
+# ============================================================
+
+FREQUENCIES = (("1 Hz", "1hz"), ("1 kHz", "1k"),
+               ("10 kHz", "10k"), ("100 kHz", "100k"),
+               ("1 MHz", "1meg"), ("10 MHz", "10meg"))
+
+for category, log, metrics in (
+    ("CMRR", cmrr_log, (("cmrr", "CMRR"),)),
+    ("PSRR+", psrrp_log, (("psrr_diff", "Differential PSRR+"),)),
+    ("PSRR-", psrrn_log, (("psrr_diff", "Differential PSRR-"),)),
+):
+    for prefix, label in metrics:
+        for freq, suffix in FREQUENCIES:
+            # Only extract explicitly identified variables from the logs.
+            key = f"{prefix}_{suffix}"
+            value = search_value(log, [rf"\b{re.escape(key)}\s*=\s*([-+0-9.eE]+)"])
+            add_result(results, category, f"{label} @ {freq}", value, "dB")
 
 
 # ============================================================
@@ -677,7 +706,7 @@ add_result(
 # OFFSET MONTE CARLO
 # ============================================================
 
-vos_file = SIM_DIR / "vos_mc_numeric.txt"
+vos_file = next((p for p in (SIM_DIR / "vos_mc_numeric.txt", SIM_DIR / "vos_mc.txt") if p.is_file()), SIM_DIR / "vos_mc.txt")
 
 offset_mean = None
 offset_sigma = None
@@ -780,6 +809,7 @@ lines.append(
 lines.append(
     "NOMINAL CHARACTERIZATION SUMMARY"
 )
+lines.append(f"Results directory: {SIM_DIR}")
 
 lines.append(
     "=" * 78
@@ -861,36 +891,13 @@ OUTPUT_TXT.write_text(
 # WRITE CSV SUMMARY
 # ============================================================
 
-csv_lines = [
-    "Category,Parameter,Value,Unit,Comment"
-]
-
-
-for item in results:
-
-    value = (
-        ""
-        if item["value"] is None
-        else f"{item['value']:.12g}"
-    )
-
-
-    csv_lines.append(
-        ",".join(
-            [
-                item["category"],
-                item["parameter"],
-                value,
-                item["unit"],
-                item["comment"],
-            ]
-        )
-    )
-
-
-OUTPUT_CSV.write_text(
-    "\n".join(csv_lines) + "\n"
-)
+with OUTPUT_CSV.open("w", newline="", encoding="utf-8") as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Category", "Parameter", "Value", "Unit", "Comment"])
+    for item in results:
+        value = "" if item["value"] is None else f"{item['value']:.12g}"
+        writer.writerow([item["category"], item["parameter"], value,
+                         item["unit"], item["comment"]])
 
 
 # ============================================================

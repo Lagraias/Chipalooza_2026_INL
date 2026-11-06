@@ -1,4 +1,3 @@
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/top_fc_ac_tb.sch
 **.subckt top_fc_ac_tb
 x1 Balance_Level Vinp voutp VDDA voutn Vinn Iref VSSA top_fc
 C1 voutn VSSA 20p
@@ -325,9 +324,8 @@ write top_fc_ac_tb.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym # of pins=8
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sch
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc.sym # of
+*+ pins=8
 .subckt top_fc Balance_Level Vinp voutp VDDA voutn Vinn Iref VSSA
 *.iopin Iref
 *.iopin VDDA
@@ -348,9 +346,7 @@ x1 VDDA VSSA Vinp Vinn voutp voutn Vb1b Vb3b Vb4 Vb5b folded_cascode
 .ends
 
 
-* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym # of pins=8
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym # of pins=8
 .subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
 *.iopin VDDA
 *.iopin VSSA
@@ -387,9 +383,8 @@ C2 net5 net2 1p
 .ends
 
 
-* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym # of pins=7
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sch
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sym # of
+*+ pins=7
 .subckt bias_circuit VDDA Vb3 Vb1 Vb5 VSSA Iref Vb6
 *.iopin VDDA
 *.iopin VSSA
@@ -445,9 +440,8 @@ XM17 net9 net7 net8 VSSA nfet_05v0 L=2u W=1.17u nf=1 ad='int((nf+1)/2) * W/nf * 
 .ends
 
 
-* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=10
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+* expanding   symbol:  realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym #
+*+ of pins=10
 .subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Voutn Vb1 Vb3 Vb4 Vb5
 *.ipin Vinp
 *.ipin Vinn

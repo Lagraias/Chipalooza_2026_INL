@@ -751,11 +751,12 @@ parameters:
         format: ascii
         suffix: .data
         variables:
-        - time
-        - vid
-        - vod
-        - vocm
-        script: extract_transient.py
+        - raw_vid_pp
+        - raw_vod_pp
+        - raw_vod_rms
+        - raw_vocm_min
+        - raw_vocm_max
+        script: top_extract_time.py
         script_variables:
         - vid_pp
         - vod_pp

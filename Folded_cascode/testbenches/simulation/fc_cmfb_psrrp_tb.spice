@@ -1,4 +1,3 @@
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_psrrp_tb_batch.sch
 **.subckt fc_cmfb_psrrp_tb_batch
 x1 VDDA VSSA Vin Vin voutp Vb1 voutn Vb1 Vb3 Vb4 Vb5 folded_cascode
 x2 VDDA VSSA voutp voutn Balance_Level Vb1 Vb4 Vb6 cmfb
@@ -294,9 +293,7 @@ plot supply_rejection_cm
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=11
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym # of pins=11
 .subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Vb1 Voutn Vb2 Vb3 Vb4 Vb5
 *.ipin Vinp
 *.ipin Vinn
@@ -334,9 +331,7 @@ XM11 d_XM11 Vb2 VDDA VDDA pfet_05v0 L=2u W=28.6u nf=1 ad='int((nf+1)/2) * W/nf *
 .ends
 
 
-* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym # of pins=8
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sch
+* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym # of pins=8
 .subckt cmfb VDDA VSSA Voutp Voutn Balance_Level Vb1 Vb4 Vb5
 *.iopin VDDA
 *.iopin VSSA

@@ -1,4 +1,3 @@
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/folded_cascode_op_tb_batch.sch
 **.subckt folded_cascode_op_tb_batch
 x1 VDDA VSSA vinp vinn voutp Vb2 voutn Vb2 Vb3 Vb4 Vb5 folded_cascode
 V1 VDDA VSSA VDDA
@@ -84,9 +83,7 @@ write folded_cascode_op_tb.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym # of pins=11
-** sym_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sch
+* expanding   symbol:  /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym # of pins=11
 .subckt folded_cascode VDDA VSSA Vinp Vinn Voutp Vb1 Voutn Vb2 Vb3 Vb4 Vb5
 *.ipin Vinp
 *.ipin Vinn

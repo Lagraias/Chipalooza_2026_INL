@@ -41,7 +41,7 @@ value="
 "}
 C {launcher.sym} 260 -490 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/top_fc_op_tb.raw"}
+tclcommand="xschem annotate_op ../testbenches/simulation/top_fc_op_tb.raw"}
 C {vsource.sym} -60 -80 0 0 {name=V2 value=CACE\{vcm\} savecurrent=false}
 C {lab_wire.sym} -60 0 0 0 {name=p15 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} -30 -180 0 0 {name=p14 sig_type=std_logic lab=Vin}

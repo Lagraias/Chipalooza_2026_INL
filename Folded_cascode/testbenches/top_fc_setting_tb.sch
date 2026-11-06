@@ -33,7 +33,7 @@ N -200 -160 -200 -110 {lab=Vinn}
 N -200 -50 -200 -10 {lab=VSSA}
 N -490 -380 -490 -340 {lab=Vcmd}
 N -490 -280 -490 -230 {lab=VSSA}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc.sym} 670 -370 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc.sym} 670 -370 0 0 {name=x1}
 C {devices/code_shown.sym} 440 -650 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -42,7 +42,7 @@ value="
 "}
 C {launcher.sym} 680 -710 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/top_fc_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/top_fc_op_tb.raw"}
 C {lab_wire.sym} 630 -470 0 0 {name=p5 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 780 -350 0 1 {name=p3 sig_type=std_logic lab=voutn}
 C {lab_wire.sym} 780 -390 0 1 {name=p4 sig_type=std_logic lab=voutp}

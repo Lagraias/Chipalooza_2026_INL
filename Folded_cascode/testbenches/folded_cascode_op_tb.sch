@@ -49,7 +49,7 @@ N 1110 -110 1110 -60 {lab=VSSA}
 N 1210 -200 1210 -160 {lab=Vb5}
 N 1210 -110 1210 -60 {lab=VSSA}
 N 760 -400 760 -380 {lab=Vb2}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym} 870 -340 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym} 870 -340 0 0 {name=x1}
 C {vsource.sym} 610 -140 0 0 {name=V1 value=VDDA savecurrent=false}
 C {lab_wire.sym} 610 -200 0 0 {name=p1 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 850 -590 0 0 {name=p2 sig_type=std_logic lab=VDDA}
@@ -168,4 +168,4 @@ value="
 "}
 C {launcher.sym} 600 -710 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/folded_cascode_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/folded_cascode_op_tb.raw"}

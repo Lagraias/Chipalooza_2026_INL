@@ -46,7 +46,7 @@ value="
 "}
 C {launcher.sym} 690 -710 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/top_fc_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/top_fc_op_tb.raw"}
 C {vsource.sym} 370 -300 0 0 {name=V2 value=2.5 savecurrent=false}
 C {lab_wire.sym} 370 -220 0 0 {name=p15 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} 400 -400 0 0 {name=p14 sig_type=std_logic lab=Vin}
@@ -395,7 +395,7 @@ plot lg_phase_deg
 
 .endc
 "}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc_stb.sym} 640 -160 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc_stb.sym} 640 -160 0 0 {name=x1}
 C {lab_wire.sym} 540 -70 0 1 {name=p20 sig_type=std_logic lab=CMFB_out}
 C {vsource.sym} 660 -70 1 0 {name=V9 value= "dc 0 ac 1" savecurrent=false}
 C {lab_wire.sym} 700 -70 0 1 {name=p36 sig_type=std_logic lab=Vb4}

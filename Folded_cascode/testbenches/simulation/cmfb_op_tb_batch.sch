@@ -30,7 +30,7 @@ N 40 170 40 220 {lab=VSSA}
 N 540 -130 560 -130 {lab=Vb4}
 N 650 180 650 230 {lab=Voutn}
 N 470 180 470 230 {lab=Voutp}
-C {/home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym} 190 -50 0 0 {name=x2}
+C {/home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym} 190 -50 0 0 {name=x2}
 C {devices/code_shown.sym} 40 -440 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -157,6 +157,6 @@ write cmfb_op_tb.raw
 "}
 C {launcher.sym} -190 -310 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/cmfb_op_tb.raw"}
+tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/testbenches/simulation/cmfb_op_tb.raw"}
 C {noconn.sym} 560 -130 2 0 {name=l2}
 C {lab_wire.sym} 260 -150 0 0 {name=p6 sig_type=std_logic lab=Voutp}

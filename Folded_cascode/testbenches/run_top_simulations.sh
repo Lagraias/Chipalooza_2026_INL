@@ -112,7 +112,7 @@ postprocess() {
   esac
   [[ -n "$script" ]] || return 0
   [[ -f "$SCRIPT_DIR/$script" ]] || { echo "Missing Python processor: $script" >&2; return 1; }
-  if ! (cd "$SIM_DIR" && MPLBACKEND=Agg python3 "$SCRIPT_DIR/$script") >"$SIM_DIR/${tb}_postprocess.log" 2>&1; then
+  if ! (cd "$SIM_DIR" && TOP_SIM_DIR="$SIM_DIR" MPLBACKEND=Agg python3 "$SCRIPT_DIR/$script") >"$SIM_DIR/${tb}_postprocess.log" 2>&1; then
     echo "Post-processing failed: $SIM_DIR/${tb}_postprocess.log" >&2
     return 1
   fi
@@ -124,7 +124,7 @@ histogram() {
   grep -E '^[[:space:]]*[-+]?(([0-9]+([.][0-9]*)?)|([.][0-9]+))([eE][-+]?[0-9]+)?[[:space:]]*$' \
     "$SIM_DIR/vos_mc.txt" >"$SIM_DIR/vos_mc_numeric.txt" || true
   [[ -s "$SIM_DIR/vos_mc_numeric.txt" ]] || return 1
-  (cd "$SIM_DIR" && MPLBACKEND=Agg python3 "$script" -i "$SIM_DIR/vos_mc_numeric.txt" -o "$SIM_DIR/vos_mc_histogram.png") \
+  (cd "$SIM_DIR" && TOP_SIM_DIR="$SIM_DIR" MPLBACKEND=Agg python3 "$script" -i "$SIM_DIR/vos_mc_numeric.txt" -o "$SIM_DIR/vos_mc_histogram.png") \
     >"$SIM_DIR/top_offset_histogram.log" 2>&1
 }
 

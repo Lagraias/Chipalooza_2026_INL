@@ -1,4 +1,3 @@
-** sch_path: /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sch
 **.subckt bias_circuit VDDA Vb3 Vb1 Vb5 VSSA Iref
 *.iopin VDDA
 *.iopin VSSA

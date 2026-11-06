@@ -13,12 +13,12 @@ def main():
     )
     parser.add_argument(
         "-i", "--input",
-        default=str(script_dir / "simulation" / "top_regression" / "vos_mc.txt"),
+        default=str(script_dir / "simulation" / "vos_mc.txt"),
         help="Input file with one Vos value per line in volts. Default: simulation/vos_mc.txt"
     )
     parser.add_argument(
         "-o", "--output",
-        default=str(script_dir / "simulation" / "top_regression" / "vos_mc_histogram.png"),
+        default=str(script_dir / "simulation" / "vos_mc_histogram.png"),
         help="Output PNG file. Default: simulation/vos_mc_histogram.png"
     )
     parser.add_argument("-b", "--bins", type=int, default=20, help="Histogram bins (default: 20)")

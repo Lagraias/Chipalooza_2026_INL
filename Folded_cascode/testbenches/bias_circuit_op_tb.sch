@@ -17,7 +17,7 @@ N 160 -80 160 -30 {lab=0}
 N 260 -180 260 -140 {lab=Iref}
 N 260 -80 260 -30 {lab=VSSA}
 N 300 -310 330 -310 {lab=Iref}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/bias_circuit.sym} 200 -130 0 0 {name=x3}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/bias_circuit.sym} 200 -130 0 0 {name=x3}
 C {noconn.sym} 570 -310 0 1 {name=l1}
 C {noconn.sym} 570 -280 0 1 {name=l2}
 C {noconn.sym} 570 -250 0 1 {name=l3}
@@ -43,7 +43,7 @@ value="
 "}
 C {launcher.sym} 140 -320 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/bias_circuit_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/bias_circuit_op_tb.raw"}
 C {code.sym} 90 -520 0 0 {name=NGSPICE only_toplevel=false value=
 "
 .temp 27

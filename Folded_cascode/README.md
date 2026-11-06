@@ -9,7 +9,7 @@ The characterization flow uses **Xschem**, **ngspice**, and **CACE 2.9.0** to ru
 ## 1. Project structure
 
 ```text
-fully_diff_FC/
+Folded_cascode/
 ├── schematic/
 │   ├── top_fc.sch
 │   ├── top_fc.sym
@@ -73,7 +73,7 @@ command -v xschem
 ls "$PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice"
 ```
 
-Run all commands from the **project root**, `fully_diff_FC/`, so that the relative paths declared in the YAML files resolve correctly.
+Run all commands from the **project root**, `Folded_cascode/`, so that the relative paths declared in the YAML files resolve correctly.
 
 ## 3. PVT characterization matrix
 

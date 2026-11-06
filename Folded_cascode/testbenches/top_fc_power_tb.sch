@@ -47,7 +47,7 @@ value="
 "}
 C {launcher.sym} 260 -540 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/top_fc_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/top_fc_op_tb.raw"}
 C {lab_wire.sym} 160 -340 0 0 {name=p5 sig_type=std_logic lab=VDDA}
 C {lab_wire.sym} 360 -130 0 1 {name=p3 sig_type=std_logic lab=voutn}
 C {lab_wire.sym} 360 -170 0 1 {name=p4 sig_type=std_logic lab=voutp}
@@ -459,7 +459,7 @@ C {lab_wire.sym} -680 0 0 0 {name=p32 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} -680 -150 0 0 {name=p39 sig_type=std_logic lab=Vdiff}
 C {lab_wire.sym} 10 -180 0 0 {name=p14 sig_type=std_logic lab=Vinp}
 C {lab_wire.sym} 10 -160 0 0 {name=p15 sig_type=std_logic lab=Vinn}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/top_fc_power.sym} 210 -100 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/top_fc_power.sym} 210 -100 0 0 {name=x1}
 C {ammeter.sym} 220 -280 0 0 {name=Vamm1 savecurrent=true spice_ignore=0}
 C {lab_wire.sym} 220 -230 0 1 {name=p40 sig_type=std_logic lab=VDDA_OTA}
 C {ammeter.sym} 280 -280 0 0 {name=Vamm2 savecurrent=true spice_ignore=0}

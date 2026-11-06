@@ -49,8 +49,8 @@ N 760 30 760 70 {lab=Balance_Level}
 N 760 130 760 180 {lab=VSSA}
 N 510 40 510 80 {lab=Vb6}
 N 510 130 510 180 {lab=VSSA}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/folded_cascode.sym} 310 -140 0 0 {name=x1}
-C {realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/schematic/cmfb.sym} 600 -190 0 0 {name=x2}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/folded_cascode.sym} 310 -140 0 0 {name=x1}
+C {realhome/Documents/gf180/2026_chipalooza/Chipalooza_2026_INL/Folded_cascode/schematic/cmfb.sym} 600 -190 0 0 {name=x2}
 C {vsource.sym} 50 -230 0 0 {name=V2 value=2.5 savecurrent=false}
 C {lab_wire.sym} 50 -150 0 0 {name=p15 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} 100 -300 0 0 {name=p14 sig_type=std_logic lab=Vin}
@@ -254,7 +254,7 @@ write fc_cmfb_op_tb.raw
 "}
 C {launcher.sym} 260 -610 0 0 {name=launcher1
 descr="Load OP"
-tclcommand="xschem annotate_op /home/juan/realhome/Documents/gf180/2026_chipalooza/fully_diff_FC/testbenches/simulation/fc_cmfb_op_tb.raw"}
+tclcommand="xschem annotate_op simulation/fc_cmfb_op_tb.raw"}
 C {vsource.sym} 510 100 0 0 {name=V7 value=Vb6 savecurrent=false}
 C {lab_wire.sym} 510 180 0 0 {name=p32 sig_type=std_logic lab=VSSA}
 C {lab_wire.sym} 930 -270 0 1 {name=p20 sig_type=std_logic lab=Vb4}
